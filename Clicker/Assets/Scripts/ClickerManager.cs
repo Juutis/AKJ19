@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ClickerManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameConfig gameConfig;
+    [SerializeField]
     private List<UpgradeConfig> allUpgrades;
     private List<UpgradeConfig> boughtUpgrades;
 
@@ -14,22 +17,40 @@ public class ClickerManager : MonoBehaviour
     public static ClickerManager main;
 
     private BigNumber mainScore;
+    private BigNumber clickPower = new(123);
     private BigNumber money;
+    private BigNumber domeHeight;
+    private BigNumber height = new(0);
+    private BigNumber speed = new(0);
 
     private int additionalClickers = 0;
     private float clickFrequency = 1;
     private float lastClick = 0;
+    private bool hasDome = false;
+    private bool clickHoldEnabled = false;
+    private int starValue;
+   
 
     private void Start()
     {
-        mainScore = new();
+        mainScore = new(0);
+        clickPower.value = gameConfig.InitialClickAmount;
+        clickFrequency = gameConfig.InitialClickHoldFrequency;
+        domeHeight.Set(gameConfig.NoDomeMaxHeight);
+        starValue = gameConfig.StarValue;
     }
 
     private void Update()
     {
         if (Time.time - lastClick >= (1f / clickFrequency))
         {
-            mainScore.IncrementValue(additionalClickers);
+            mainScore.IncrementValue(clickPower, additionalClickers);
+        }
+
+        if (hasDome || height.CompareTo(domeHeight) < 0)
+        {
+            BigNumber speedPerFrame = BigNumber.Multiply(speed, Time.deltaTime);
+            height.Increase(speedPerFrame);
         }
     }
 
@@ -37,7 +58,7 @@ public class ClickerManager : MonoBehaviour
     {
         if (action == ClickerAction.NumberGoUp)
         {
-            mainScore.IncrementValue();
+            mainScore.IncrementValue(clickPower);
         }
         if (action == ClickerAction.BuyUpgrade)
         {
@@ -64,7 +85,7 @@ public class ClickerManager : MonoBehaviour
             return;
         }
 
-        if (money.Compare(upgrade.moneyRequirement) < 0)
+        if (money.CompareTo(upgrade.moneyRequirement) < 0)
         {
             Debug.LogWarning("Trying to buy an upgrade that is too expensive! Should be blocked by UI");
             return;
@@ -72,6 +93,13 @@ public class ClickerManager : MonoBehaviour
 
         money.Decrease(upgrade.moneyRequirement);
         boughtUpgrades.Add(upgrade);
+
+        additionalClickers += upgrade.additionalClickersAdded;
+        additionalClickers *= Mathf.Max(upgrade.additionalClickMultiplier, 1);
+        clickFrequency = Mathf.Max(upgrade.clickHoldFrequency, clickFrequency);
+        clickPower.Multiply(upgrade.clickAmountMultiplier);
+        hasDome |= upgrade.isDome;
+        clickHoldEnabled |= upgrade.clickHoldEnabled;
     }
 
     public string GetScore()
@@ -83,7 +111,7 @@ public class ClickerManager : MonoBehaviour
     {
         return allUpgrades
             .Where(x => !boughtUpgrades.Select(x => x.UpgradeName).Contains(x.UpgradeName))
-            .Where(x => mainScore.Compare(x.scoreRequirement) >= 0)
+            .Where(x => mainScore.CompareTo(x.scoreRequirement) >= 0)
             .Where(x =>
                 x.requiredUpgrades.Select(y => y.UpgradeName).All(y => boughtUpgrades.Select(z => z.UpgradeName).Contains(y))
             );
@@ -92,7 +120,12 @@ public class ClickerManager : MonoBehaviour
     public IEnumerable<UpgradeConfig> BuyableUpgrades()
     {
         return VisibleUpgrades()
-            .Where(x => money.Compare(x.moneyRequirement) >= 0);
+            .Where(x => money.CompareTo(x.moneyRequirement) >= 0);
+    }
+
+    public void GetStar()
+    {
+        money.Increase(starValue);
     }
 }
 
