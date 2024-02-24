@@ -99,7 +99,7 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         HighlightClick();
         if (ClickerManager.main)
         {
-            ClickerManager.main.RegisterClick();
+            ClickerManager.main.RegisterClick(ClickerAction.NumberGoUp);
         }
         else
         {

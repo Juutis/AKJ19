@@ -8,9 +8,26 @@ public class ClickerManager : MonoBehaviour
     }
     public static ClickerManager main;
 
-    public void RegisterClick()
+    private BigNumber mainScore;
+
+    private void Start()
     {
+        mainScore = new();
+    }
+
+    public void RegisterClick(ClickerAction action)
+    {
+        if (action == ClickerAction.NumberGoUp)
+        {
+            mainScore.IncrementValue();
+        }
+
         Debug.Log("Click registered");
+    }
+
+    public string GetScore()
+    {
+        return mainScore.GetNumber();
     }
 }
 
