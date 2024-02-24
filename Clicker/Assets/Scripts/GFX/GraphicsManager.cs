@@ -73,7 +73,7 @@ public class GraphicsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        testHeight = testHeight + Time.deltaTime * 5.0f;
+        testHeight = testHeight + Time.deltaTime * 50.0f;
         SetHeight(testHeight);
 
 
