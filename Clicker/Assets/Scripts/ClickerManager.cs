@@ -1,7 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ClickerManager : MonoBehaviour
 {
+    private List<UpgradeConfig> allUpgrades;
+    private List<UpgradeConfig> boughtUpgrades;
+
     void Awake()
     {
         main = this;
@@ -27,12 +31,13 @@ public class ClickerManager : MonoBehaviour
 
     public string GetScore()
     {
-        return mainScore.GetNumber();
+        return mainScore.GetUIValue();
     }
 }
 
 public enum ClickerAction
 {
     None,
-    NumberGoUp
+    NumberGoUp,
+    BuyUpgrade
 }

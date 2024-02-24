@@ -6,19 +6,13 @@ using UnityEngine.UI;
 
 public class BigNumber
 {
-    private float value;
-    private BigInteger bigValue;
+    public BigInteger value { get; set; } = new(0);
+    public BigInteger prevValue { get; set; }
 
-    private float prevValue;
-    private BigInteger prevBigValue;
-
-    private float printValue;
     private BigInteger printBigValue;
 
-    private float adder = 1.00001f;
-    private BigInteger bigAdder;
-
-    private const int limit = 1000000;
+    public BigInteger valueStep { get; set; } = new(123);
+    public BigInteger prevValueStep { get; set; }
 
     private float lerpTime = 0.5f;
     private float lerpStarted = 0.0f;
@@ -26,63 +20,35 @@ public class BigNumber
 
     public void IncrementValue()
     {
-        if (value < limit)
-        {
-            prevValue = value;
-            value += adder;
-        }
-        else
-        {
-            prevBigValue = new BigInteger(bigValue.ToByteArray());
-            bigValue += bigAdder;
-        }
+        prevValue = new BigInteger(value.ToByteArray());
+        value += valueStep;
+
         currentLerp = 0;
         lerpStarted = Time.time;
     }
     
     public void IncrementStep ()
     {
-        if (value < limit)
-        {
-            adder *= 1.51f;
-        }
-        else
-        {
-            BigInteger multiplier = (BigInteger)(1.1f * 1000f);
-            bigAdder = (bigAdder * multiplier) / 1000;
-        }
+        prevValueStep = valueStep;
+        BigInteger multiplier = (BigInteger)(1.1f * 1000f);
+        valueStep = (valueStep * multiplier) / 1000;
     }
 
-    public string GetNumber()
+    public string GetUIValue()
     {
-        string number = "";
         currentLerp = (Time.time - lerpStarted) / lerpTime;
 
-        if (value < limit)
+        if (value.ToString("N0").Length < 20)
         {
-            return Mathf.Lerp(prevValue, value, currentLerp).ToString();
+            return Lerp(prevValue, value, currentLerp).ToString("N0");
         }
         else
         {
-
-            if (bigValue.IsZero)
-            {
-                bigValue = new BigInteger(value);
-                bigAdder = new BigInteger(adder);
-            }
-
-            if (bigValue.ToString("N0").Length < 20)
-            {
-                return Lerp(prevBigValue, bigValue, currentLerp).ToString("N0");
-            }
-            else
-            {
-                return Lerp(prevBigValue, bigValue, currentLerp).ToString("E");
-            }
+            return Lerp(prevValue, value, currentLerp).ToString("E");
         }
     }
 
-    private BigInteger Lerp(BigInteger start, BigInteger end, float k)
+    public static BigInteger Lerp(BigInteger start, BigInteger end, float k)
     {
         int mult = 10000;
 
