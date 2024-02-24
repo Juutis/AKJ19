@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f67f2c6482e5b41b5e436a109523be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: + NUMBAGOUP
   txtTitle: {fileID: 4353124088512337835}
   imgBg: {fileID: 8912952523081800682}
   hoverTextColor: {r: 0.7877358, g: 0.92924535, b: 1, a: 1}
@@ -143,6 +144,7 @@ MonoBehaviour:
   clickBgColor: {r: 0, g: 0.4333334, b: 1, a: 1}
   continuousHoldBoundary: 0.5
   continuousClickInterval: 0.2
+  clickerAction: 1
 --- !u!1 &7326964745173685962
 GameObject:
   m_ObjectHideFlags: 0

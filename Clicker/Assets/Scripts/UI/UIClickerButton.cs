@@ -6,9 +6,12 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 {
 
     [SerializeField]
+    private string title;
+    [SerializeField]
     private Text txtTitle;
     [SerializeField]
     private Image imgBg;
+
 
     [SerializeField]
     private Color hoverTextColor;
@@ -34,10 +37,14 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     private float clickHightlightDuration = 0.1f;
 
+    [SerializeField]
+    private ClickerAction clickerAction;
+
     void Start()
     {
         normalTextColor = txtTitle.color;
         normalBgColor = imgBg.color;
+        txtTitle.text = title;
     }
 
     void Update()

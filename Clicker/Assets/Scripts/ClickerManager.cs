@@ -13,3 +13,9 @@ public class ClickerManager : MonoBehaviour
         Debug.Log("Click registered");
     }
 }
+
+public enum ClickerAction
+{
+    None,
+    NumberGoUp
+}
