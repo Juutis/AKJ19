@@ -1,5 +1,6 @@
 using System;
 using System.Numerics;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,8 +10,6 @@ public class BigNumber
     public BigInteger value { get; set; } = new(0);
     public BigInteger prevValue { get; set; }
 
-    private BigInteger printBigValue;
-
     public BigInteger valueStep { get; set; } = new(123);
     public BigInteger prevValueStep { get; set; }
 
@@ -18,20 +17,44 @@ public class BigNumber
     private float lerpStarted = 0.0f;
     private float currentLerp = 0;
 
-    public void IncrementValue()
+    public void IncrementValue(int stepCount = 1)
     {
         prevValue = new BigInteger(value.ToByteArray());
-        value += valueStep;
+        value += stepCount * valueStep;
 
         currentLerp = 0;
         lerpStarted = Time.time;
     }
-    
-    public void IncrementStep ()
+
+    public void IncrementStep()
     {
         prevValueStep = valueStep;
         BigInteger multiplier = (BigInteger)(1.1f * 1000f);
         valueStep = (valueStep * multiplier) / 1000;
+    }
+
+    public void Increase(int val)
+    {
+        prevValue = value;
+        value += val;
+    }
+
+    public void Increase(string val)
+    {
+        if (BigInteger.TryParse(val, out BigInteger result))
+        {
+            prevValue = value;
+            value += result;
+        }
+    }
+
+    public void Decrease(string val)
+    {
+        if (BigInteger.TryParse(val, out BigInteger result))
+        {
+            prevValue = value;
+            value -= result;
+        }
     }
 
     public string GetUIValue()
@@ -46,6 +69,27 @@ public class BigNumber
         {
             return Lerp(prevValue, value, currentLerp).ToString("E");
         }
+    }
+
+    public int Compare(string val)
+    {
+        if (BigInteger.TryParse(val, out BigInteger result))
+        {
+            if (value > result)
+            {
+                return 1;
+            }
+            else if (value < result)
+            {
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        return 1;
     }
 
     public static BigInteger Lerp(BigInteger start, BigInteger end, float k)

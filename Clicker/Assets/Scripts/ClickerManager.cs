@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ClickerManager : MonoBehaviour
@@ -13,25 +14,85 @@ public class ClickerManager : MonoBehaviour
     public static ClickerManager main;
 
     private BigNumber mainScore;
+    private BigNumber money;
+
+    private int additionalClickers = 0;
+    private float clickFrequency = 1;
+    private float lastClick = 0;
 
     private void Start()
     {
         mainScore = new();
     }
 
-    public void RegisterClick(ClickerAction action)
+    private void Update()
+    {
+        if (Time.time - lastClick >= (1f / clickFrequency))
+        {
+            mainScore.IncrementValue(additionalClickers);
+        }
+    }
+
+    public void RegisterClick(ClickerAction action, ClickData data)
     {
         if (action == ClickerAction.NumberGoUp)
         {
             mainScore.IncrementValue();
         }
+        if (action == ClickerAction.BuyUpgrade)
+        {
+            BuyUpgrade(data);
+            return;
+        }
 
         Debug.Log("Click registered");
+    }
+
+    private void BuyUpgrade(ClickData data)
+    {
+        if (data == null || string.IsNullOrWhiteSpace(data.ResourceName))
+        {
+            Debug.LogError("Trying to buy an upgrade without ClickData!");
+            return;
+        }
+
+        UpgradeConfig upgrade = allUpgrades.FirstOrDefault(x => x.UpgradeName == data.ResourceName);
+
+        if (upgrade == null)
+        {
+            Debug.LogError("Trying to buy an upgrade that doesn't exist in ClickerManager allUpgrades!");
+            return;
+        }
+
+        if (money.Compare(upgrade.moneyRequirement) < 0)
+        {
+            Debug.LogWarning("Trying to buy an upgrade that is too expensive! Should be blocked by UI");
+            return;
+        }
+
+        money.Decrease(upgrade.moneyRequirement);
+        boughtUpgrades.Add(upgrade);
     }
 
     public string GetScore()
     {
         return mainScore.GetUIValue();
+    }
+
+    public IEnumerable<UpgradeConfig> VisibleUpgrades()
+    {
+        return allUpgrades
+            .Where(x => !boughtUpgrades.Select(x => x.UpgradeName).Contains(x.UpgradeName))
+            .Where(x => mainScore.Compare(x.scoreRequirement) >= 0)
+            .Where(x =>
+                x.requiredUpgrades.Select(y => y.UpgradeName).All(y => boughtUpgrades.Select(z => z.UpgradeName).Contains(y))
+            );
+    }
+
+    public IEnumerable<UpgradeConfig> BuyableUpgrades()
+    {
+        return VisibleUpgrades()
+            .Where(x => money.Compare(x.moneyRequirement) >= 0);
     }
 }
 
@@ -40,4 +101,9 @@ public enum ClickerAction
     None,
     NumberGoUp,
     BuyUpgrade
+}
+
+public class ClickData
+{
+    public string ResourceName { get; set; }
 }
