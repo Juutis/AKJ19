@@ -18,13 +18,19 @@ public class GraphicsManager : MonoBehaviour
     private Transform water;
 
     [SerializeField]
-    private GameObject speedStripes;
+    private ParticleSystem speedStripes;
 
     [SerializeField]
-    private GameObject speedStars;
+    private ParticleSystem speedStars;
 
     [SerializeField]
     private ParticleSystem splash;
+
+    [SerializeField]
+    private ParticleSystem clouds;
+
+    [SerializeField]
+    private ParticleSystem stars;
 
     private CinemachineBasicMultiChannelPerlin cameraNoise;
     private CinemachineDollyCart cameraDolly;
@@ -57,15 +63,17 @@ public class GraphicsManager : MonoBehaviour
         cameraNoise = camera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         cameraDolly = camera.GetComponent<CinemachineDollyCart>();
         origWaterLevel = water.transform.position.y;
-        speedStripes.SetActive(false);
-        speedStars.SetActive(false);
         waterMaterial = water.GetComponent<Renderer>().material;
+        clouds.Stop();
+        speedStripes.Stop();
+        speedStars.Stop();
+        stars.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        testHeight = testHeight + Time.deltaTime;
+        testHeight = testHeight + Time.deltaTime * 5.0f;
         SetHeight(testHeight);
 
         handleSky();
@@ -99,14 +107,6 @@ public class GraphicsManager : MonoBehaviour
             Rumble();
         }
         currentHeight = height;
-
-        if (currentHeight > 20) {
-            speedStripes.SetActive(true);
-        }
-
-        if (currentHeight > 40) {
-            speedStars.SetActive(true);
-        }
     }
 
     public void Rumble() {
@@ -131,6 +131,38 @@ public class GraphicsManager : MonoBehaviour
         var exposure = Mathf.Lerp(currentConfig.Exposure, nextConfig.Exposure, t);
         var waterAlpha = Mathf.Lerp(currentConfig.WaterAlpha, nextConfig.WaterAlpha, t);
         configureSkyBox(skyColor, groundColor, thickness, exposure, waterAlpha);
+
+        if (currentConfig.SpawnClouds) {
+            if (clouds.isStopped) {
+                clouds.Play();
+            }
+        } else {
+            clouds.Stop();
+        }
+        
+        if (currentConfig.ShowSpeedStripes) {
+            if (speedStripes.isStopped) {
+                speedStripes.Play();
+            }
+        } else {
+            speedStripes.Stop();
+        }
+        
+        if (currentConfig.SpawnSpeedStars) {
+            if (speedStars.isStopped) {
+                speedStars.Play();
+            }
+        } else {
+            speedStars.Stop();
+        }
+
+        if (currentConfig.ShowStars) {
+            if (stars.isStopped) {
+                stars.Play();
+            }
+        } else {
+            stars.Stop();
+        }
     }
 
     private int nextSkyboxThreshold() {
@@ -161,4 +193,8 @@ public struct SkyboxHeightThreshold {
     public float Thickness;
     public float Exposure;
     public float WaterAlpha;
+    public bool SpawnClouds;
+    public bool ShowSpeedStripes;
+    public bool SpawnSpeedStars;
+    public bool ShowStars;
 }
