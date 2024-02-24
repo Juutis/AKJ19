@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
@@ -30,6 +31,8 @@ public class ClickerManager : MonoBehaviour
     private float lastClick = 0;
     private bool hasDome = false;
     private bool clickHoldEnabled = false;
+    private float starFlyDuration = 0;
+
     public bool ClickHoldEnabled { get { return clickHoldEnabled; } }
     private int starValue;
 
@@ -48,13 +51,13 @@ public class ClickerManager : MonoBehaviour
         clickFrequency = gameConfig.InitialClickHoldFrequency;
         noDomeMaxScore = new(gameConfig.NoDomeMaxScore);
         starValue = gameConfig.StarValue;
+        starFlyDuration = gameConfig.StarFlyDuration;
     }
 
     private void Update()
     {
         if (Time.time - lastClick >= (1f / clickFrequency))
         {
-            Debug.Log($"Autoclicked {additionalClickers} ||| {clickPower.value}");
             System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower, additionalClickers);
             lastClick = Time.time;
             // UIManager.main.ShowPoppingText($"+{increment:N0}", position);
@@ -72,6 +75,11 @@ public class ClickerManager : MonoBehaviour
         {
             upgradeCheckTimer = 0f;
             CheckUpgrades();
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Invoke("GetStar", starFlyDuration);
         }
     }
 
@@ -171,8 +179,6 @@ public class ClickerManager : MonoBehaviour
         }
     }
 
-
-
     public IEnumerable<UpgradeConfig> VisibleUpgrades()
     {
         return allUpgrades
@@ -192,6 +198,7 @@ public class ClickerManager : MonoBehaviour
     public void GetStar()
     {
         money.Increase(starValue);
+        Debug.Log(money.value);
     }
 }
 

@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: UP-Autoclicker
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Click +2
-  Description: Each click is now worth 2 more
-  LoreText: Some clicks are worth even more than others
+  UpgradeName: Click buddy
+  Description: Button gets clicked automatically
+  LoreText: Sometimes you need to ask a favor from a friend
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
   scoreRequirement: 20
   requiredUpgrades:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
   clickAmountMultiplier: 0
-  clickValueAddition: 2
-  additionalClickersAdded: 0
+  clickValueAddition: 0
+  additionalClickersAdded: 1
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
   upgrade: 0

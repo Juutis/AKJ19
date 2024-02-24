@@ -15,4 +15,7 @@ public class GameConfig : ScriptableObject
     public string NoDomeMaxScore { get; private set; }
     [field: SerializeField]
     public int StarValue { get; private set; }
+
+    [field: SerializeField]
+    public float StarFlyDuration { get; private set; }
 }
