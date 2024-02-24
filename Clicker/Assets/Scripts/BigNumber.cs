@@ -17,13 +17,15 @@ public class BigNumber
     private float lerpStarted = 0.0f;
     private float currentLerp = 0;
 
-    public void IncrementValue(int stepCount = 1)
+    public BigInteger IncrementValue(int stepCount = 1)
     {
         prevValue = new BigInteger(value.ToByteArray());
-        value += stepCount * valueStep;
+        var increment = stepCount * valueStep;
+        value += increment;
 
         currentLerp = 0;
         lerpStarted = Time.time;
+        return increment;
     }
 
     public void IncrementStep()
