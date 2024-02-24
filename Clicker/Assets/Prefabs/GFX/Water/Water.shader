@@ -8,10 +8,13 @@ Shader "Unlit/Water"
 		_SurfaceNoiseScroll("Surface Noise Scroll Amount", Vector) = (0.03, 0.03, 0, 0)
 		_SurfaceDistortion("Surface Distortion", 2D) = "white" {}
 		_SurfaceDistortionAmount("Surface Distortion Amount", Range(0, 1)) = 0.27
+		_Alpha("Alpha", Range(0, 1)) = 1.0
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
+        ZWrite Off
+        Blend SrcAlpha OneMinusSrcAlpha
         LOD 100
 
         Pass
@@ -47,6 +50,7 @@ Shader "Unlit/Water"
 			sampler2D _SurfaceDistortion;
 			float4 _SurfaceDistortion_ST;
 			float _SurfaceDistortionAmount;
+			float _Alpha;
 
             v2f vert (appdata v)
             {
@@ -70,7 +74,8 @@ Shader "Unlit/Water"
 				float surfaceNoiseSample = tex2D(_SurfaceNoise, noise).r;
 				float surfaceNoise = surfaceNoiseSample > _SurfaceNoiseCutoff ? 1 : 0;
 
-				return col + surfaceNoise;
+                fixed4 finalColor = col + surfaceNoise;
+				return fixed4(finalColor.x, finalColor.y, finalColor.z, _Alpha);
             }
             ENDCG
         }
