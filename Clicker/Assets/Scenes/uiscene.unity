@@ -617,7 +617,8 @@ MonoBehaviour:
   gameConfig: {fileID: 11400000, guid: d6c086731b3bddf40b32ee8017b6a2ea, type: 2}
   allUpgrades:
   - {fileID: 11400000, guid: 479e3b68a7d00404d9f1855ce71cf140, type: 2}
-  clickerButtonPrefab: {fileID: 5127830512815742122, guid: cbe1428107aa22244abcb991a4305932,
+  - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
+  clickerButtonPrefab: {fileID: 5127830512815742122, guid: 51a2c874590e19042a1292525567a9e7,
     type: 3}
 --- !u!4 &1841167076
 Transform:
@@ -1754,6 +1755,7 @@ MonoBehaviour:
   uiPoppingTextPrefab: {fileID: 7905565617510709586, guid: b786311247080804a92069b27b71fc54,
     type: 3}
   uiPoppingTextContainer: {fileID: 1480433973}
+  buttonContainer: {fileID: 731727919}
 --- !u!224 &6915369532077398480
 RectTransform:
   m_ObjectHideFlags: 0

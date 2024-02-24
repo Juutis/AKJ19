@@ -273,9 +273,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f67f2c6482e5b41b5e436a109523be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: + NUMBAGOUP
   txtTitle: {fileID: 4429474615071207050}
+  costContainer: {fileID: 0}
+  txtCost: {fileID: 0}
   imgBg: {fileID: 8912952523081800682}
+  bgColor: {r: 0, g: 0.46666667, b: 1, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  disabledBgColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  disabledTextColor: {r: 1, g: 1, b: 1, a: 1}
   hoverTextColor: {r: 0.7877358, g: 0.92924535, b: 1, a: 1}
   clickTextColor: {r: 0.6401299, g: 0.8160351, b: 0.990566, a: 1}
   hoverBgColor: {r: 0, g: 0.5333333, b: 1, a: 1}
@@ -283,6 +288,7 @@ MonoBehaviour:
   continuousHoldBoundary: 0.5
   continuousClickInterval: 0.2
   clickerAction: 1
+  upgradeConfig: {fileID: 0}
 --- !u!1 &7326964745173685962
 GameObject:
   m_ObjectHideFlags: 0

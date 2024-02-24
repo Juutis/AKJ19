@@ -8,9 +8,9 @@ public class ClickerManager : MonoBehaviour
     [SerializeField]
     private GameConfig gameConfig;
     [SerializeField]
-    private List<UpgradeConfig> allUpgrades;
-    private List<UpgradeConfig> boughtUpgrades;
-    private List<UIClickerButton> upgradeButtons;
+    private List<UpgradeConfig> allUpgrades = new();
+    private List<UpgradeConfig> boughtUpgrades = new();
+    private List<UIClickerButton> upgradeButtons = new();
 
     void Awake()
     {
@@ -41,8 +41,9 @@ public class ClickerManager : MonoBehaviour
     private void Start()
     {
         mainScore = new(0);
-        money = new(0);
+        money = new(gameConfig.InitialMoney);
         clickPower.value = gameConfig.InitialClickAmount;
+
         clickFrequency = gameConfig.InitialClickHoldFrequency;
         noDomeMaxScore = new(gameConfig.NoDomeMaxScore);
         starValue = gameConfig.StarValue;
@@ -112,9 +113,16 @@ public class ClickerManager : MonoBehaviour
         boughtUpgrades.Add(upgrade);
 
         additionalClickers += upgrade.additionalClickersAdded;
-        additionalClickers *= Mathf.Max(upgrade.additionalClickMultiplier, 1);
+        if (upgrade.additionalClickMultiplier > 0)
+        {
+            additionalClickers *= Mathf.Max(upgrade.additionalClickMultiplier, 1);
+        }
         clickFrequency = Mathf.Max(upgrade.clickHoldFrequency, clickFrequency);
-        clickPower.Multiply(upgrade.clickAmountMultiplier);
+        if (upgrade.clickAmountMultiplier > 0)
+        {
+            clickPower.Multiply(upgrade.clickAmountMultiplier);
+        }
+        clickPower.Increase(upgrade.clickValueAddition);
         hasDome |= upgrade.isDome;
         clickHoldEnabled |= upgrade.clickHoldEnabled;
         passiveScoreIncrease.Increase(upgrade.passiveScoreIncrease);
@@ -131,13 +139,30 @@ public class ClickerManager : MonoBehaviour
             .Where(x => !boughtUpgrades.Select(x => x.UpgradeName).Contains(x.UpgradeName))
             .Where(x => !upgradeButtons.Any(y => y.UpgradeConfig == x))
             .Where(x => mainScore.CompareTo(x.scoreRequirement) >= 0)
-            .Where(x =>
+            .Where(x => x.requiredUpgrades == null ||
                 x.requiredUpgrades.Select(y => y.UpgradeName).All(y => boughtUpgrades.Select(z => z.UpgradeName).Contains(y))
             );
         foreach (UpgradeConfig config in newUpgrades)
         {
             UIClickerButton newButton = Instantiate(clickerButtonPrefab);
-            newButton.Init(config);
+            newButton.InitUpgradeButton(config);
+            UIManager.main.AddButton(newButton);
+            upgradeButtons.Add(newButton);
+        }
+        foreach (UIClickerButton button in upgradeButtons)
+        {
+            if (button.IsHidden)
+            {
+                continue;
+            }
+            if (button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) >= 0)
+            {
+                button.Enable();
+            }
+            else if (!button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) == -1)
+            {
+                button.Disable();
+            }
         }
     }
 

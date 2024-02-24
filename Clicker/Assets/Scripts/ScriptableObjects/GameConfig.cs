@@ -10,6 +10,8 @@ public class GameConfig : ScriptableObject
     [field: SerializeField]
     public int InitialClickAmount { get; private set; }
     [field: SerializeField]
+    public int InitialMoney { get; private set; }
+    [field: SerializeField]
     public string NoDomeMaxScore { get; private set; }
     [field: SerializeField]
     public int StarValue { get; private set; }
