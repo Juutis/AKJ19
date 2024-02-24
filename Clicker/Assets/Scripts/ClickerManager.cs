@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 
 public class ClickerManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class ClickerManager : MonoBehaviour
     [SerializeField]
     private List<UpgradeConfig> allUpgrades;
     private List<UpgradeConfig> boughtUpgrades;
+    private List<UIClickerButton> upgradeButtons;
 
     void Awake()
     {
@@ -28,8 +30,14 @@ public class ClickerManager : MonoBehaviour
     private float lastClick = 0;
     private bool hasDome = false;
     private bool clickHoldEnabled = false;
+    public bool ClickHoldEnabled { get { return clickHoldEnabled; } }
     private int starValue;
-   
+
+    [SerializeField]
+    private UIClickerButton clickerButtonPrefab;
+
+    private float upgradeCheckTimer = 0f;
+    private float upgradeCheckInterval = 1f;
 
     private void Start()
     {
@@ -51,6 +59,13 @@ public class ClickerManager : MonoBehaviour
         {
             BigNumber speedPerFrame = BigNumber.Multiply(speed, Time.deltaTime);
             height.Increase(speedPerFrame);
+        }
+
+        upgradeCheckTimer += Time.deltaTime;
+        if (upgradeCheckTimer > upgradeCheckInterval)
+        {
+            upgradeCheckTimer = 0f;
+            CheckUpgrades();
         }
     }
 
@@ -108,6 +123,24 @@ public class ClickerManager : MonoBehaviour
     {
         return mainScore.GetUIValue();
     }
+
+    private void CheckUpgrades()
+    {
+        IEnumerable<UpgradeConfig> newUpgrades = allUpgrades
+            .Where(x => !boughtUpgrades.Select(x => x.UpgradeName).Contains(x.UpgradeName))
+            .Where(x => !upgradeButtons.Any(y => y.UpgradeConfig == x))
+            .Where(x => mainScore.CompareTo(x.scoreRequirement) >= 0)
+            .Where(x =>
+                x.requiredUpgrades.Select(y => y.UpgradeName).All(y => boughtUpgrades.Select(z => z.UpgradeName).Contains(y))
+            );
+        foreach (UpgradeConfig config in newUpgrades)
+        {
+            UIClickerButton newButton = Instantiate(clickerButtonPrefab);
+            newButton.Init(config);
+        }
+    }
+
+
 
     public IEnumerable<UpgradeConfig> VisibleUpgrades()
     {

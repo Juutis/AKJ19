@@ -13,8 +13,16 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     [SerializeField]
     private TextMeshProUGUI txtTitle;
     [SerializeField]
+    private GameObject costContainer;
+    [SerializeField]
+    private TextMeshProUGUI txtCost;
+    [SerializeField]
     private Image imgBg;
 
+    [SerializeField]
+    private Color disabledBgColor;
+    [SerializeField]
+    private Color disabledTextColor;
 
     [SerializeField]
     private Color hoverTextColor;
@@ -28,8 +36,6 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     private Color clickBgColor;
     private Color normalBgColor;
 
-    [SerializeField]
-    private bool isContinuousHoldEnabled = false;
     private bool isHeldDown = false;
     private bool isContinuouslyHeld = false;
     private float continuousHoldTimer = 0f;
@@ -45,16 +51,40 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     [SerializeField]
     private ClickerAction clickerAction;
 
+    [SerializeField]
+    private UpgradeConfig upgradeConfig;
+    public UpgradeConfig UpgradeConfig { get { return upgradeConfig; } }
+
+    [SerializeField]
+    private int cost = 0;
+
+    public void Init(UpgradeConfig config)
+    {
+        upgradeConfig = config;
+        clickerAction = ClickerAction.BuyUpgrade;
+    }
+
     void Start()
     {
         normalTextColor = txtTitle.color;
         normalBgColor = imgBg.color;
         txtTitle.text = title;
+        if (clickerAction == ClickerAction.BuyUpgrade)
+        {
+            costContainer.gameObject.SetActive(true);
+            txtCost.text = $"{cost:N0}";
+        }
+        /*if (requirements not met) {
+            txtTitle.color = disabledTextColor;
+            txtCost.color = disabledTextColor;
+            imgBg.color = disabledBgColor;
+        }
+        */
     }
 
     void Update()
     {
-        if (!isContinuousHoldEnabled)
+        if (clickerAction != ClickerAction.NumberGoUp || !ClickerManager.main.ClickHoldEnabled)
         {
             return;
         }
