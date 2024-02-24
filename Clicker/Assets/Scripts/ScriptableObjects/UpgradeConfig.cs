@@ -19,6 +19,7 @@ public class UpgradeConfig : ScriptableObject
     public List<UpgradeConfig> requiredUpgrades;
     [Header("Upgrade effects")]
     public int clickAmountMultiplier;
+    public int clickValueAddition;
     public int additionalClickersAdded;
     public int additionalClickMultiplier;
     public float clickHoldFrequency;

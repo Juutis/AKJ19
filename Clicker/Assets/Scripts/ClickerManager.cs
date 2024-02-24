@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 
 public class ClickerManager : MonoBehaviour
@@ -7,8 +8,9 @@ public class ClickerManager : MonoBehaviour
     [SerializeField]
     private GameConfig gameConfig;
     [SerializeField]
-    private List<UpgradeConfig> allUpgrades;
-    private List<UpgradeConfig> boughtUpgrades;
+    private List<UpgradeConfig> allUpgrades = new();
+    private List<UpgradeConfig> boughtUpgrades = new();
+    private List<UIClickerButton> upgradeButtons = new();
 
     void Awake()
     {
@@ -27,14 +29,21 @@ public class ClickerManager : MonoBehaviour
     private float lastClick = 0;
     private bool hasDome = false;
     private bool clickHoldEnabled = false;
+    public bool ClickHoldEnabled { get { return clickHoldEnabled; } }
     private int starValue;
-   
+
+    [SerializeField]
+    private UIClickerButton clickerButtonPrefab;
+
+    private float upgradeCheckTimer = 0f;
+    private float upgradeCheckInterval = 1f;
 
     private void Start()
     {
         mainScore = new(0);
-        money = new(0);
+        money = new(gameConfig.InitialMoney);
         clickPower.value = gameConfig.InitialClickAmount;
+
         clickFrequency = gameConfig.InitialClickHoldFrequency;
         noDomeMaxScore = new(gameConfig.NoDomeMaxScore);
         starValue = gameConfig.StarValue;
@@ -51,6 +60,13 @@ public class ClickerManager : MonoBehaviour
         {
             BigNumber scorePerFrame = BigNumber.Multiply(passiveScoreIncrease, Time.deltaTime);
             mainScore.Increase(scorePerFrame);
+        }
+
+        upgradeCheckTimer += Time.deltaTime;
+        if (upgradeCheckTimer > upgradeCheckInterval)
+        {
+            upgradeCheckTimer = 0f;
+            CheckUpgrades();
         }
     }
 
@@ -97,9 +113,16 @@ public class ClickerManager : MonoBehaviour
         boughtUpgrades.Add(upgrade);
 
         additionalClickers += upgrade.additionalClickersAdded;
-        additionalClickers *= Mathf.Max(upgrade.additionalClickMultiplier, 1);
+        if (upgrade.additionalClickMultiplier > 0)
+        {
+            additionalClickers *= Mathf.Max(upgrade.additionalClickMultiplier, 1);
+        }
         clickFrequency = Mathf.Max(upgrade.clickHoldFrequency, clickFrequency);
-        clickPower.Multiply(upgrade.clickAmountMultiplier);
+        if (upgrade.clickAmountMultiplier > 0)
+        {
+            clickPower.Multiply(upgrade.clickAmountMultiplier);
+        }
+        clickPower.Increase(upgrade.clickValueAddition);
         hasDome |= upgrade.isDome;
         clickHoldEnabled |= upgrade.clickHoldEnabled;
         passiveScoreIncrease.Increase(upgrade.passiveScoreIncrease);
@@ -109,6 +132,41 @@ public class ClickerManager : MonoBehaviour
     {
         return mainScore.GetUIValue();
     }
+
+    private void CheckUpgrades()
+    {
+        IEnumerable<UpgradeConfig> newUpgrades = allUpgrades
+            .Where(x => !boughtUpgrades.Select(x => x.UpgradeName).Contains(x.UpgradeName))
+            .Where(x => !upgradeButtons.Any(y => y.UpgradeConfig == x))
+            .Where(x => mainScore.CompareTo(x.scoreRequirement) >= 0)
+            .Where(x => x.requiredUpgrades == null ||
+                x.requiredUpgrades.Select(y => y.UpgradeName).All(y => boughtUpgrades.Select(z => z.UpgradeName).Contains(y))
+            );
+        foreach (UpgradeConfig config in newUpgrades)
+        {
+            UIClickerButton newButton = Instantiate(clickerButtonPrefab);
+            newButton.InitUpgradeButton(config);
+            UIManager.main.AddButton(newButton);
+            upgradeButtons.Add(newButton);
+        }
+        foreach (UIClickerButton button in upgradeButtons)
+        {
+            if (button.IsHidden)
+            {
+                continue;
+            }
+            if (button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) >= 0)
+            {
+                button.Enable();
+            }
+            else if (!button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) == -1)
+            {
+                button.Disable();
+            }
+        }
+    }
+
+
 
     public IEnumerable<UpgradeConfig> VisibleUpgrades()
     {
