@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <InitialClickHoldFrequency>k__BackingField: 3
   <InitialClickAmount>k__BackingField: 1
-  <NoDomeMaxHeight>k__BackingField: 1000000
+  <NoDomeMaxScore>k__BackingField: 213123123
+  <StarValue>k__BackingField: 0
