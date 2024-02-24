@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ClickerManager : MonoBehaviour
 {
@@ -53,7 +54,11 @@ public class ClickerManager : MonoBehaviour
     {
         if (Time.time - lastClick >= (1f / clickFrequency))
         {
-            mainScore.IncrementValue(clickPower, additionalClickers);
+            Debug.Log($"Autoclicked {additionalClickers} ||| {clickPower.value}");
+            System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower, additionalClickers);
+            lastClick = Time.time;
+            // UIManager.main.ShowPoppingText($"+{increment:N0}", position);
+            UIManager.main.UpdateScore(mainScore.value);
         }
 
         if (hasDome || mainScore.CompareTo(noDomeMaxScore) < 0)
