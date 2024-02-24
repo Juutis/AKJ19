@@ -54,11 +54,13 @@ public class ClickerManager : MonoBehaviour
         }
     }
 
-    public void RegisterClick(ClickerAction action, ClickData data = null)
+    public void RegisterClick(ClickerAction action, Vector3 position, ClickData data = null)
     {
         if (action == ClickerAction.NumberGoUp)
         {
-            mainScore.IncrementValue(clickPower);
+            System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower);
+            UIManager.main.ShowPoppingText($"+{increment:N0}", position);
+            UIManager.main.UpdateScore(mainScore.value);
         }
         if (action == ClickerAction.BuyUpgrade)
         {
@@ -66,7 +68,7 @@ public class ClickerManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("Click registered");
+        //Debug.Log("Click registered");
     }
 
     private void BuyUpgrade(ClickData data)
