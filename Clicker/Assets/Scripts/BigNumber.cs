@@ -35,7 +35,7 @@ public class BigNumber : IComparable
 
         currentLerp = 0;
         lerpStarted = Time.time;
-        return amount.value;
+        return count * amount.value;
     }
 
     // public void IncrementStep()

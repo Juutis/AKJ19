@@ -25,7 +25,7 @@ public class UpgradeConfig : ScriptableObject
     public UpgradePrefab upgrade;
     public bool isDome;
     public bool clickHoldEnabled;
-    public string verticalSpeedIncrease;
+    public string passiveScoreIncrease;
 }
 
 public enum UpgradeType
