@@ -18,10 +18,14 @@ public class UpgradeConfig : ScriptableObject
     public string scoreRequirement;
     public List<UpgradeConfig> requiredUpgrades;
     [Header("Upgrade effects")]
-    public float clickAmountMultiplier;
+    public int clickAmountMultiplier;
     public int additionalClickersAdded;
     public int additionalClickMultiplier;
     public float clickHoldFrequency;
+    public UpgradePrefab upgrade;
+    public bool isDome;
+    public bool clickHoldEnabled;
+    public string verticalSpeedIncrease;
 }
 
 public enum UpgradeType

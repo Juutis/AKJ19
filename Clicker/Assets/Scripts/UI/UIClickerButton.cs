@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
 
     [SerializeField]
     private string title;
+    //[SerializeField]
+    //private Text txtTitle;
     [SerializeField]
-    private Text txtTitle;
+    private TextMeshProUGUI txtTitle;
     [SerializeField]
     private Image imgBg;
 
@@ -25,6 +28,8 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     private Color clickBgColor;
     private Color normalBgColor;
 
+    [SerializeField]
+    private bool isContinuousHoldEnabled = false;
     private bool isHeldDown = false;
     private bool isContinuouslyHeld = false;
     private float continuousHoldTimer = 0f;
@@ -49,6 +54,10 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     void Update()
     {
+        if (!isContinuousHoldEnabled)
+        {
+            return;
+        }
         if (isHeldDown && !isContinuouslyHeld)
         {
             continuousHoldTimer += Time.deltaTime;
@@ -99,24 +108,26 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         HighlightClick();
         if (ClickerManager.main)
         {
-            ClickerManager.main.RegisterClick(ClickerAction.NumberGoUp);
+            //Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            ClickerManager.main.RegisterClick(ClickerAction.NumberGoUp, Input.mousePosition);
         }
         else
         {
             Debug.Log("ClickerManager is missing from scene");
         }
+
         Invoke("Highlight", clickHightlightDuration);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Button Clicked!");
+        //Debug.Log("Button Clicked!");
         Click();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("entered");
+        //Debug.Log("entered");
         txtTitle.color = hoverTextColor;
         imgBg.color = hoverBgColor;
         Highlight();
@@ -125,7 +136,7 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public void OnPointerExit(PointerEventData eventData)
     {
         ResetHold();
-        Debug.Log("Exited");
+        //Debug.Log("Exited");
         txtTitle.color = normalTextColor;
         imgBg.color = normalBgColor;
         Unhighlight();
@@ -134,13 +145,13 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public void OnPointerDown(PointerEventData pointerEventData)
     {
         isHeldDown = true;
-        Debug.Log(name + "Game Object Click in Progress");
+        //Debug.Log(name + "Game Object Click in Progress");
     }
 
     public void OnPointerUp(PointerEventData pointerEventData)
     {
         ResetHold();
-        Debug.Log(name + "No longer being clicked");
+        //Debug.Log(name + "No longer being clicked");
     }
 }
 public delegate void ButtonClicked();
