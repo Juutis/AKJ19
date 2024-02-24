@@ -11,9 +11,6 @@ public class BigNumber : IComparable
     public BigInteger value { get; set; } = new(0);
     public BigInteger prevValue { get; set; } = new(0);
 
-    // public BigInteger valueStep { get; set; } = new(123);
-    // public BigInteger prevValueStep { get; set; }
-
     private float lerpTime = 0.5f;
     private float lerpStarted = 0.0f;
     private float currentLerp = 0;
@@ -49,13 +46,6 @@ public class BigNumber : IComparable
         lerpStarted = Time.time;
         return count * amount.value;
     }
-
-    // public void IncrementStep()
-    // {
-    //     prevValueStep = valueStep;
-    //     BigInteger multiplier = (BigInteger)(1.1f * 1000f);
-    //     valueStep = (valueStep * multiplier) / 1000;
-    // }
 
     public void Increase(int val)
     {
