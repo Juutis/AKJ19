@@ -11,7 +11,9 @@ public class UIManager : MonoBehaviour
     public static UIManager main;
 
     [SerializeField]
-    private UIScoreText uIScoreText;
+    private UIScoreText uiScoreText;
+    [SerializeField]
+    private UIHoverBox uiHoverBox;
 
     [SerializeField]
     private UIPoppingText uiPoppingTextPrefab;
@@ -31,9 +33,19 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void ShowHoverBox(string description, string flavor)
+    {
+        uiHoverBox.Show(description, flavor);
+    }
+
+    public void HideHoverBox()
+    {
+        uiHoverBox.Hide();
+    }
+
     public void AddButton(UIClickerButton button)
     {
-        button.transform.SetParent(buttonContainer);
+        button.transform.SetParent(buttonContainer, false);
     }
 
     public void ShowPoppingText(string message, Vector3 position)
@@ -44,6 +56,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScore(System.Numerics.BigInteger newScore)
     {
-        uIScoreText.UpdateScore(newScore);
+        uiScoreText.UpdateScore(newScore);
     }
 }
