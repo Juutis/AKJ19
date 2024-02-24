@@ -129,6 +129,10 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     private void Highlight()
     {
+        if (clickerAction == ClickerAction.BuyUpgrade)
+        {
+            UIManager.main.ShowHoverBox(upgradeConfig.Description, upgradeConfig.LoreText);
+        }
         if (isDisabled)
         {
             return;
@@ -175,6 +179,7 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
             {
                 ClickerManager.main.RegisterClick(clickerAction, Input.mousePosition, new() { ResourceName = upgradeConfig.UpgradeName });
                 Hide();
+                UIManager.main.HideHoverBox();
             }
         }
         else
@@ -201,6 +206,7 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         ResetHold();
         Unhighlight();
+        UIManager.main.HideHoverBox();
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
