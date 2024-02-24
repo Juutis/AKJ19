@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class BigNumber : IComparable
 {
     public BigInteger value { get; set; } = new(0);
-    public BigInteger prevValue { get; set; }
+    public BigInteger prevValue { get; set; } = new(0);
 
     // public BigInteger valueStep { get; set; } = new(123);
     // public BigInteger prevValueStep { get; set; }
@@ -17,6 +17,10 @@ public class BigNumber : IComparable
     private float lerpTime = 0.5f;
     private float lerpStarted = 0.0f;
     private float currentLerp = 0;
+
+    public BigNumber()
+    {
+    }
 
     public BigNumber(int initialValue)
     {
@@ -28,6 +32,14 @@ public class BigNumber : IComparable
         value = val;
     }
 
+    public BigNumber(string val)
+    {
+        if (BigInteger.TryParse(val, out BigInteger result))
+        {
+            value = result;
+        }
+    }
+
     public BigInteger IncrementValue(BigNumber amount, int count = 1)
     {
         prevValue = new BigInteger(value.ToByteArray());
@@ -35,7 +47,7 @@ public class BigNumber : IComparable
 
         currentLerp = 0;
         lerpStarted = Time.time;
-        return amount.value;
+        return count * amount.value;
     }
 
     // public void IncrementStep()

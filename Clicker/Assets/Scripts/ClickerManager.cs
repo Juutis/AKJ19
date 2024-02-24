@@ -19,9 +19,8 @@ public class ClickerManager : MonoBehaviour
     private BigNumber mainScore;
     private BigNumber clickPower = new(123);
     private BigNumber money;
-    private BigNumber domeHeight;
-    private BigNumber height = new(0);
-    private BigNumber speed = new(0);
+    private BigNumber noDomeMaxScore;
+    private BigNumber passiveScoreIncrease = new(0);
 
     private int additionalClickers = 0;
     private float clickFrequency = 1;
@@ -34,9 +33,10 @@ public class ClickerManager : MonoBehaviour
     private void Start()
     {
         mainScore = new(0);
+        money = new(0);
         clickPower.value = gameConfig.InitialClickAmount;
         clickFrequency = gameConfig.InitialClickHoldFrequency;
-        domeHeight.Set(gameConfig.NoDomeMaxHeight);
+        noDomeMaxScore = new(gameConfig.NoDomeMaxScore);
         starValue = gameConfig.StarValue;
     }
 
@@ -47,10 +47,10 @@ public class ClickerManager : MonoBehaviour
             mainScore.IncrementValue(clickPower, additionalClickers);
         }
 
-        if (hasDome || height.CompareTo(domeHeight) < 0)
+        if (hasDome || mainScore.CompareTo(noDomeMaxScore) < 0)
         {
-            BigNumber speedPerFrame = BigNumber.Multiply(speed, Time.deltaTime);
-            height.Increase(speedPerFrame);
+            BigNumber scorePerFrame = BigNumber.Multiply(passiveScoreIncrease, Time.deltaTime);
+            mainScore.Increase(scorePerFrame);
         }
     }
 
@@ -102,6 +102,7 @@ public class ClickerManager : MonoBehaviour
         clickPower.Multiply(upgrade.clickAmountMultiplier);
         hasDome |= upgrade.isDome;
         clickHoldEnabled |= upgrade.clickHoldEnabled;
+        passiveScoreIncrease.Increase(upgrade.passiveScoreIncrease);
     }
 
     public string GetScore()

@@ -10,7 +10,7 @@ public class GameConfig : ScriptableObject
     [field: SerializeField]
     public int InitialClickAmount { get; private set; }
     [field: SerializeField]
-    public string NoDomeMaxHeight { get; private set; }
+    public string NoDomeMaxScore { get; private set; }
     [field: SerializeField]
     public int StarValue { get; private set; }
 }
