@@ -76,7 +76,6 @@ public class GraphicsManager : MonoBehaviour
         testHeight = testHeight + Time.deltaTime * 5.0f;
         SetHeight(testHeight);
 
-        handleSky();
 
         if (rumbleTime > Time.time) {
             var t = (rumbleTime - Time.time) / rumbleDuration;
@@ -90,6 +89,8 @@ public class GraphicsManager : MonoBehaviour
             cameraNoise.m_FrequencyGain = 0.0f;
             splash.Stop();
         }
+
+        handleSky();
 
         var targetWaterLevel = -currentHeight + 1;
         if (targetWaterLevel > 0) targetWaterLevel = 0;
@@ -163,6 +164,19 @@ public class GraphicsManager : MonoBehaviour
         } else {
             stars.Stop();
         }
+
+        if (currentConfig.EnableObject != null) {
+            currentConfig.EnableObject.SetActive(true);
+        }
+
+        if (rumbleTime < Time.time) {
+            var rumbleAmount = Mathf.Lerp(currentConfig.Rumble, nextConfig.Rumble, t);
+            if (currentConfig.Rumble < 0.001) {
+                rumbleAmount = 0.0f;
+            }
+            cameraNoise.m_AmplitudeGain = rumbleAmount;
+            cameraNoise.m_FrequencyGain = rumbleAmount;
+        }
     }
 
     private int nextSkyboxThreshold() {
@@ -197,4 +211,6 @@ public struct SkyboxHeightThreshold {
     public bool ShowSpeedStripes;
     public bool SpawnSpeedStars;
     public bool ShowStars;
+    public GameObject EnableObject;
+    public float Rumble;
 }
