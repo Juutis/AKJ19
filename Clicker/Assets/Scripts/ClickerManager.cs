@@ -33,7 +33,7 @@ public class ClickerManager : MonoBehaviour
         }
     }
 
-    public void RegisterClick(ClickerAction action, ClickData data)
+    public void RegisterClick(ClickerAction action, ClickData data = null)
     {
         if (action == ClickerAction.NumberGoUp)
         {
