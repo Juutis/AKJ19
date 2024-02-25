@@ -77,8 +77,8 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         RectTransform rt = imgStar.rectTransform;
         float xOffset = txtCost.text.Length * txtCost.fontSize / 2f;
         rt.anchoredPosition = new Vector2(rt.anchoredPosition.x + Mathf.Clamp(xOffset, txtCost.fontSize, 999f), rt.anchoredPosition.y);
-        System.Numerics.BigInteger req;
-        System.Numerics.BigInteger.TryParse(config.scoreRequirement, out req);
+        long req;
+        long.TryParse(config.scoreRequirement, out req);
         scoreReq.SetScore(req);
     }
 

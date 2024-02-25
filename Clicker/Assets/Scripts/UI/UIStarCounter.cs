@@ -10,8 +10,8 @@ public class UIStarCounter : MonoBehaviour
     private float charSize = 40;
     private float padding = 30;
 
-    private System.Numerics.BigInteger currentScore = 0;
-    private System.Numerics.BigInteger targetScore;
+    private long currentScore = 0;
+    private long targetScore;
     // Start is called before the first frame update
 
     private bool isLerping = false;
@@ -24,7 +24,7 @@ public class UIStarCounter : MonoBehaviour
         if (isLerping)
         {
             lerpTimer += Time.deltaTime;
-            System.Numerics.BigInteger newScore = BigNumber.Lerp(currentScore, targetScore, lerpTimer / lerpDuration);
+            long newScore = BigNumber.Lerp(currentScore, targetScore, lerpTimer / lerpDuration);
             if (lerpTimer / lerpDuration >= 1)
             {
                 currentScore = targetScore;
@@ -35,7 +35,7 @@ public class UIStarCounter : MonoBehaviour
         }
     }
 
-    private void SetScore(System.Numerics.BigInteger newScore)
+    private void SetScore(long newScore)
     {
         scoreText.text = $"{newScore:N0}";
         /*rtContainer.sizeDelta = new Vector2(
@@ -44,7 +44,7 @@ public class UIStarCounter : MonoBehaviour
         );*/
     }
 
-    public void UpdateScore(System.Numerics.BigInteger newScore)
+    public void UpdateScore(long newScore)
     {
         targetScore = newScore;
         isLerping = true;

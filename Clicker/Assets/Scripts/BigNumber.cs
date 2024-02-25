@@ -1,16 +1,10 @@
 using System;
-using System.Numerics;
-using System.Text;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BigNumber : IComparable
 {
-    public BigInteger value { get; set; } = new(0);
-    public BigInteger prevValue { get; set; } = new(0);
+    public long value { get; set; } = 0;
+    public long prevValue { get; set; } = 0;
 
     private float lerpTime = 0.5f;
     private float lerpStarted = 0.0f;
@@ -22,25 +16,25 @@ public class BigNumber : IComparable
 
     public BigNumber(int initialValue)
     {
-        value = new(initialValue);
+        value = initialValue;
     }
 
-    public BigNumber(BigInteger val)
+    public BigNumber(long val)
     {
         value = val;
     }
 
     public BigNumber(string val)
     {
-        if (BigInteger.TryParse(val, out BigInteger result))
+        if (long.TryParse(val, out long result))
         {
             value = result;
         }
     }
 
-    public BigInteger IncrementValue(BigNumber amount, int count = 1)
+    public long IncrementValue(BigNumber amount, int count = 1)
     {
-        prevValue = new BigInteger(value.ToByteArray());
+        prevValue = value;
         value += count * amount.value;
 
         currentLerp = 0;
@@ -62,7 +56,7 @@ public class BigNumber : IComparable
 
     public void Increase(string val)
     {
-        if (BigInteger.TryParse(val, out BigInteger result))
+        if (long.TryParse(val, out long result))
         {
             prevValue = value;
             value += result;
@@ -71,7 +65,7 @@ public class BigNumber : IComparable
 
     public void Decrease(string val)
     {
-        if (BigInteger.TryParse(val, out BigInteger result))
+        if (long.TryParse(val, out long result))
         {
             prevValue = value;
             value -= result;
@@ -88,8 +82,8 @@ public class BigNumber : IComparable
     {
         int scale = 1000;
         int kScaled = (int)(scale * k);
-        BigInteger val = new(a.value.ToByteArray());
-        val = BigInteger.Divide(val * kScaled, scale);
+        long val = a.value;
+        val = val * kScaled / scale;
 
         return new BigNumber(val);
     }
@@ -97,7 +91,7 @@ public class BigNumber : IComparable
     public void Set(string val)
     {
         prevValue = value;
-        if (BigInteger.TryParse(val, out BigInteger result))
+        if (long.TryParse(val, out long result))
         {
             value = result;
         }
@@ -133,9 +127,9 @@ public class BigNumber : IComparable
         }
         else if (other is int || other is double || other is float)
         {
-            return value.CompareTo(new BigInteger((int)other));
+            return value.CompareTo((int)other);
         }
-        else if (other is BigInteger)
+        else if (other is long)
         {
             return value.CompareTo(other);
         }
@@ -150,7 +144,7 @@ public class BigNumber : IComparable
 
     public int CompareTo(string val)
     {
-        if (BigInteger.TryParse(val, out BigInteger result))
+        if (long.TryParse(val, out long result))
         {
             if (value > result)
             {
@@ -169,7 +163,7 @@ public class BigNumber : IComparable
         return 1;
     }
 
-    public static BigInteger Lerp(BigInteger start, BigInteger end, float k)
+    public static long Lerp(long start, long end, float k)
     {
         int mult = 10000;
 
@@ -185,8 +179,8 @@ public class BigNumber : IComparable
         {
             int kDiv = (int)((1 / k) * mult);
 
-            BigInteger diff = mult * (end - start);
-            BigInteger step = BigInteger.Divide(diff, new BigInteger(kDiv));
+            long diff = mult * (end - start);
+            long step = diff / kDiv;
             return step + start;
         }
     }
