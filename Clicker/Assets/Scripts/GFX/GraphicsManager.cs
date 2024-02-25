@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -35,6 +36,9 @@ public class GraphicsManager : MonoBehaviour
 
     [SerializeField]
     private IslandLauncher island;
+
+    [SerializeField]
+    private CinemachineVirtualCamera cam;
 
     private CinemachineBasicMultiChannelPerlin cameraNoise;
     private CinemachineDollyCart cameraDolly;
@@ -179,6 +183,7 @@ public class GraphicsManager : MonoBehaviour
             enableBloom();
             cameraNoise.m_AmplitudeGain = 0;
             cameraNoise.m_FrequencyGain = 0;
+            ClickerManager.main.End();
             return;
         }
 
@@ -268,6 +273,12 @@ public class GraphicsManager : MonoBehaviour
             cameraNoise.m_AmplitudeGain = rumbleAmount;
             cameraNoise.m_FrequencyGain = rumbleAmount;
         }
+
+        var curFov = currentConfig.fov;
+        var nextFov = nextConfig.fov;
+        if (curFov < 0.1f) curFov = 60.0f;
+        if (nextFov < 0.1f) nextFov = 60.0f;
+        cam.m_Lens.FieldOfView = Mathf.Lerp(curFov, nextFov, t);
     }
 
     private int nextSkyboxThreshold()
@@ -315,4 +326,5 @@ public struct SkyboxHeightThreshold
     public bool ShowAsteroids;
     public Mover EnableObject;
     public float Rumble;
+    public float fov;
 }

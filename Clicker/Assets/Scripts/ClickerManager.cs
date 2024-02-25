@@ -55,6 +55,13 @@ public class ClickerManager : MonoBehaviour
         UIManager.main.UpdateMoney(money.value);
     }
 
+    private bool ended = false;
+
+    public void End() {
+        if (ended) return;
+
+    }
+
     private void Update()
     {
         if (!hasDome && mainScore.CompareTo(noDomeMaxScore) >= 0)

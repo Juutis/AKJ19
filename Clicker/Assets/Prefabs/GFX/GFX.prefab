@@ -20116,7 +20116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3424167061922599831}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.065124616, y: 0.91629446, z: -0.16650686, w: -0.35838363}
+  m_LocalRotation: {x: -0.065124616, y: 0.91629446, z: -0.16650684, w: -0.3583836}
   m_LocalPosition: {x: 11.848179, y: 2.6835577, z: 12.829323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25421,6 +25421,7 @@ MonoBehaviour:
   stars: {fileID: 4975707859982371062}
   asteroids: {fileID: 285864079934714469}
   island: {fileID: 3181378356594047184}
+  cam: {fileID: 6109542283290567859}
   skyboxMaterial: {fileID: 2100000, guid: 7fc9c2212e0ff674896f9dbb3c3599f7, type: 2}
   skyboxHeightThresholds:
   - Threshold: 0
@@ -25436,6 +25437,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
+    fov: 0
   - Threshold: 10
     SkyColor: {r: 1, g: 0.7764706, b: 0.93333334, a: 1}
     GroundColor: {r: 0, g: 0.5058824, b: 1, a: 1}
@@ -25449,6 +25451,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
+    fov: 0
   - Threshold: 100
     SkyColor: {r: 1, g: 0.7764706, b: 0.93333334, a: 1}
     GroundColor: {r: 0, g: 0.5058824, b: 1, a: 1}
@@ -25462,6 +25465,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 1
+    fov: 0
   - Threshold: 500
     SkyColor: {r: 0.6650944, g: 0.7241954, b: 1, a: 1}
     GroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -25475,6 +25479,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
+    fov: 0
   - Threshold: 1500
     SkyColor: {r: 0.6650944, g: 0.7241954, b: 1, a: 1}
     GroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -25488,6 +25493,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
+    fov: 0
   - Threshold: 5000
     SkyColor: {r: 1, g: 0.9291898, b: 0.8632076, a: 1}
     GroundColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
@@ -25501,6 +25507,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
+    fov: 0
   - Threshold: 15000
     SkyColor: {r: 0, g: 0.3140161, b: 1, a: 1}
     GroundColor: {r: 0, g: 0.67276335, b: 1, a: 1}
@@ -25514,6 +25521,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 5408562152558009320}
     Rumble: 1
+    fov: 0
   - Threshold: 45000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0.6745098, b: 1, a: 1}
@@ -25527,6 +25535,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 10
+    fov: 0
   - Threshold: 50000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0.6745098, b: 1, a: 1}
@@ -25540,6 +25549,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
+    fov: 0
   - Threshold: 100000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0.6745098, b: 1, a: 1}
@@ -25553,6 +25563,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
+    fov: 0
   - Threshold: 150000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25566,6 +25577,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 3074572354411763021}
     Rumble: 0
+    fov: 0
   - Threshold: 500000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25579,6 +25591,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 6206167825151027737}
     Rumble: 0
+    fov: 0
   - Threshold: 1500000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25592,6 +25605,7 @@ MonoBehaviour:
     ShowAsteroids: 1
     EnableObject: {fileID: 0}
     Rumble: 1
+    fov: 0
   - Threshold: 5000000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25605,6 +25619,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 8518050998209744393}
     Rumble: 0
+    fov: 90
   - Threshold: 15000000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25618,6 +25633,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 1201193720117517905}
     Rumble: 0
+    fov: 90
   - Threshold: 50000000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25631,6 +25647,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 7976591455666097692}
     Rumble: 0
+    fov: 90
   - Threshold: 150000000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25644,6 +25661,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 2725984315446975972}
     Rumble: 0
+    fov: 90
   - Threshold: 500000000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25657,6 +25675,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 1172647486999466956}
     Rumble: 0
+    fov: 90
   - Threshold: 1.5e+9
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25670,6 +25689,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 7288026915275901122}
     Rumble: 0
+    fov: 90
   - Threshold: 3e+9
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25683,6 +25703,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 467936554077150300}
     Rumble: 0
+    fov: 90
   - Threshold: 5e+9
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25696,6 +25717,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 2681014602657275188}
     Rumble: 0.5
+    fov: 90
   - Threshold: 7e+9
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25709,6 +25731,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 5
+    fov: 90
   - Threshold: 7e+9
     SkyColor: {r: 1, g: 0, b: 0.92941177, a: 1}
     GroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -25722,6 +25745,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
+    fov: 60
   volume: {fileID: 8149031878541581259}
   music: {fileID: 0}
 --- !u!114 &3089003420910314659
@@ -36030,7 +36054,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7360554540542760047}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.0000000018626449, y: 0.000000029802319, z: -0.0000000037252899,
+    w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -41068,7 +41093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496379766b4e6c64f99fbac384937f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalDistance: 6000
+  totalDistance: 10000
   curve:
     serializedVersion: 2
     m_Curve:
@@ -42484,7 +42509,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 6000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 2221319946688431506, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
@@ -42615,7 +42640,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 6000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
@@ -44865,7 +44890,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 6000
+      value: 80000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
@@ -46313,7 +46338,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 4000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
@@ -46930,7 +46955,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 7000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
@@ -48606,7 +48631,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 3500
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
@@ -51958,7 +51983,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 6000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
@@ -52672,7 +52697,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 6000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}

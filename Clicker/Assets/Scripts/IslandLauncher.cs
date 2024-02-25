@@ -16,7 +16,7 @@ public class IslandLauncher : MonoBehaviour
     void Update()
     {
         if (launched) {
-            transform.Translate(Vector3.up * Time.deltaTime * 10.0f, Space.World);
+            transform.Translate(Vector3.up * Time.deltaTime * 50.0f, Space.World);
             transform.Rotate(new Vector3(1.0f, 1.0f, 1.0f), Time.deltaTime * 180.0f);
         }
     }

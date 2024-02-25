@@ -31,7 +31,7 @@ public class Mover : MonoBehaviour
     public void SetPosition(float t) {
         Init();
         t = Mathf.Clamp(t, 0.0f, 1.0f);
-        transform.position = Vector3.Lerp(origPosition, targetPosition, curve.Evaluate(t));
+        transform.position = Vector3.Lerp(origPosition, targetPosition, t);
     }
 
     private void Init() {
