@@ -133,6 +133,10 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         {
             UIManager.main.ShowHoverBox(upgradeConfig.Description, upgradeConfig.LoreText);
         }
+        if (isHidden)
+        {
+            UIManager.main.HideHoverBox();
+        }
         if (isDisabled)
         {
             return;
