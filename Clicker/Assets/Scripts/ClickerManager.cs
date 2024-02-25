@@ -158,6 +158,7 @@ public class ClickerManager : MonoBehaviour
         starFrequency += upgrade.starCaughtFrequencyAddition;
 
         UpgradeGraphics.Main.SetUpgrades(boughtUpgrades);
+        CheckUpgrades();
         return true;
     }
 
