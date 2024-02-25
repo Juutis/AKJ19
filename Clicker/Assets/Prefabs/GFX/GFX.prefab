@@ -20116,7 +20116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3424167061922599831}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.065124616, y: 0.91629446, z: -0.16650684, w: -0.35838363}
+  m_LocalRotation: {x: -0.065124616, y: 0.91629446, z: -0.16650686, w: -0.35838363}
   m_LocalPosition: {x: 11.848179, y: 2.6835577, z: 12.829323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25695,7 +25695,7 @@ MonoBehaviour:
     ShowStars: 1
     ShowAsteroids: 0
     EnableObject: {fileID: 2681014602657275188}
-    Rumble: 0
+    Rumble: 0.5
   - Threshold: 7e+9
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
