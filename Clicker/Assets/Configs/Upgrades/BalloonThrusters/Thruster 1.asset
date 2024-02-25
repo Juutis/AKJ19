@@ -20,7 +20,7 @@ MonoBehaviour:
   moneyRequirement: 0
   scoreRequirement: 1000
   requiredUpgrades:
-  - {fileID: 11400000, guid: 60c2a7563c68dfc4f9199b09161ec4ed, type: 2}
+  - {fileID: 11400000, guid: 75ecd5bce2fffc444beffabcfe7b452b, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0

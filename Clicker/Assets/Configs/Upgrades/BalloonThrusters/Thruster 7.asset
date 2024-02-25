@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: Thruster 5
+  m_Name: Thruster 7
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Thruster V
-  Description: Gives extra lift! +500 Lift/s
+  UpgradeName: Hyperdrive
+  Description: Gives extra lift! +10000000 Lift/s
   LoreText: Say goodbye to the solar system
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
   scoreRequirement: 5000
   requiredUpgrades:
-  - {fileID: 11400000, guid: dd4ea253f733e4b4cb09d90db4099abd, type: 2}
+  - {fileID: 11400000, guid: 8e0f7694c3731be45937ccc5364958bf, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0
@@ -29,6 +29,6 @@ MonoBehaviour:
   upgrade: 0
   isDome: 0
   clickHoldEnabled: 0
-  passiveScoreIncrease: 500
+  passiveScoreIncrease: 10000000
   starCaughtValueAddition: 0
   starCaughtFrequencyAddition: 0
