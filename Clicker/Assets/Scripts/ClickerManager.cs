@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ClickerManager : MonoBehaviour
 {
@@ -66,7 +64,7 @@ public class ClickerManager : MonoBehaviour
 
         if (Time.time - lastClick >= (1f / clickFrequency) && additionalClickers > 0)
         {
-            System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower, additionalClickers);
+            long increment = mainScore.IncrementValue(clickPower, additionalClickers);
             lastClick = Time.time;
             UpdateScore();
             UIManager.main.ShowPoppingText($"+{increment:N0}", prevClickPos);
@@ -104,7 +102,7 @@ public class ClickerManager : MonoBehaviour
     {
         if (action == ClickerAction.NumberGoUp)
         {
-            System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower);
+            long increment = mainScore.IncrementValue(clickPower);
             UIManager.main.ShowPoppingText($"+{increment:N0}", position);
             UpdateScore();
             prevClickPos = position;
@@ -194,9 +192,11 @@ public class ClickerManager : MonoBehaviour
             {
                 button.Enable();
             }
-            else if (!button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) == -1 && mainScore.CompareTo(button.UpgradeConfig.scoreRequirement) == -1)
+            else if (!button.IsDisabled)
             {
-                button.Disable();
+                if (money.CompareTo(button.UpgradeConfig.moneyRequirement) == -1 || mainScore.CompareTo(button.UpgradeConfig.scoreRequirement) == -1) {
+                    button.Disable();
+                }
             }
         }
     }

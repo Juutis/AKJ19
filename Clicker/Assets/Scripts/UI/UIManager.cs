@@ -74,12 +74,12 @@ public class UIManager : MonoBehaviour
         uiPoppingText.Show(position, message);
     }
 
-    public void UpdateMoney(System.Numerics.BigInteger newMoney)
+    public void UpdateMoney(long newMoney)
     {
         uiMoneyText.UpdateScore(newMoney);
     }
 
-    public void UpdateScore(System.Numerics.BigInteger newScore)
+    public void UpdateScore(long newScore)
     {
         uiScoreText.UpdateScore(newScore);
     }

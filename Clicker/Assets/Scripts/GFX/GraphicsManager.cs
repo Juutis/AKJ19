@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
-using Mono.Cecil.Cil;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.UIElements;
 
 public class GraphicsManager : MonoBehaviour
 {
@@ -73,7 +70,8 @@ public class GraphicsManager : MonoBehaviour
     [SerializeField]
     private AudioSource music;
 
-    void Awake() {
+    void Awake()
+    {
         Main = this;
     }
 
@@ -107,14 +105,18 @@ public class GraphicsManager : MonoBehaviour
         var heightDifference = targetHeight - lerpStartHeight;
         currentHeight = lerpStartHeight + heightT * heightDifference;
 
-        if (rumbleTime > Time.time) {
+        if (rumbleTime > Time.time)
+        {
             var t = (rumbleTime - Time.time) / rumbleDuration;
             cameraNoise.m_AmplitudeGain = rumbleIntensity * t;
             cameraNoise.m_FrequencyGain = rumbleIntensity * t;
-            if (currentHeight < 12) {
+            if (currentHeight < 12)
+            {
                 splash.Play();
             }
-        } else {
+        }
+        else
+        {
             cameraNoise.m_AmplitudeGain = 0.0f;
             cameraNoise.m_FrequencyGain = 0.0f;
             splash.Stop();
@@ -132,11 +134,13 @@ public class GraphicsManager : MonoBehaviour
         if (cameraOrbitSpeed > 10) cameraOrbitSpeed = 10;
         cameraDolly.m_Speed = (float)cameraOrbitSpeed;
 
-        if (cameraOrbitSpeed > 0 && !music.isPlaying) {
+        if (cameraOrbitSpeed > 0 && !music.isPlaying)
+        {
             music.Play();
         }
 
-        if (targetHeight != nextTargetHeight) {
+        if (targetHeight != nextTargetHeight)
+        {
             targetHeight = nextTargetHeight;
             lerpStarted = Time.time;
             lerpStartHeight = currentHeight;
@@ -145,24 +149,30 @@ public class GraphicsManager : MonoBehaviour
 
     private double nextTargetHeight;
 
-    public void SetHeight(double height) {
-        if (height == nextTargetHeight) {
+    public void SetHeight(double height)
+    {
+        if (height == nextTargetHeight)
+        {
             return;
         }
-        if (height < 12) {
+        if (height < 12)
+        {
             Rumble();
         }
         nextTargetHeight = height;
     }
 
-    public void Rumble() {
+    public void Rumble()
+    {
         if (rumbleTime > Time.time) return;
         rumbleTime = Time.time + rumbleDuration;
     }
 
-    private void handleSky() {
+    private void handleSky()
+    {
         var i = nextSkyboxThreshold();
-        if (i >= skyboxHeightThresholds.Count) {
+        if (i >= skyboxHeightThresholds.Count)
+        {
             var config = skyboxHeightThresholds.Last();
             configureSkyBox(config.SkyColor, config.GroundColor, config.Thickness, config.Exposure, config.WaterAlpha);
             island.Launch();
@@ -180,54 +190,77 @@ public class GraphicsManager : MonoBehaviour
         var waterAlpha = Mathf.Lerp(currentConfig.WaterAlpha, nextConfig.WaterAlpha, t);
         configureSkyBox(skyColor, groundColor, thickness, exposure, waterAlpha);
 
-        if (currentConfig.SpawnClouds) {
-            if (clouds.isStopped) {
+        if (currentConfig.SpawnClouds)
+        {
+            if (clouds.isStopped)
+            {
                 clouds.Play();
             }
-        } else {
+        }
+        else
+        {
             clouds.Stop();
         }
-        
-        if (currentConfig.ShowSpeedStripes) {
-            if (speedStripes.isStopped) {
+
+        if (currentConfig.ShowSpeedStripes)
+        {
+            if (speedStripes.isStopped)
+            {
                 speedStripes.Play();
             }
-        } else {
+        }
+        else
+        {
             speedStripes.Stop();
         }
-        
-        if (currentConfig.SpawnSpeedStars) {
-            if (speedStars.isStopped) {
+
+        if (currentConfig.SpawnSpeedStars)
+        {
+            if (speedStars.isStopped)
+            {
                 speedStars.Play();
             }
-        } else {
+        }
+        else
+        {
             speedStars.Stop();
         }
 
-        if (currentConfig.ShowStars) {
-            if (stars.isStopped) {
+        if (currentConfig.ShowStars)
+        {
+            if (stars.isStopped)
+            {
                 stars.Play();
             }
-        } else {
+        }
+        else
+        {
             stars.Stop();
         }
 
-        if (currentConfig.ShowAsteroids) {
-            if (asteroids.isStopped) {
+        if (currentConfig.ShowAsteroids)
+        {
+            if (asteroids.isStopped)
+            {
                 asteroids.Play();
             }
-        } else {
+        }
+        else
+        {
             asteroids.Stop();
         }
 
-        if (currentConfig.EnableObject != null) {
+        if (currentConfig.EnableObject != null)
+        {
             currentConfig.EnableObject.gameObject.SetActive(true);
             currentConfig.EnableObject.SetPosition(t);
         }
 
-        if (rumbleTime < Time.time) {
+        if (rumbleTime < Time.time)
+        {
             var rumbleAmount = Mathf.Lerp(currentConfig.Rumble, nextConfig.Rumble, t);
-            if (currentConfig.Rumble < 0.001) {
+            if (currentConfig.Rumble < 0.001)
+            {
                 rumbleAmount = 0.0f;
             }
             cameraNoise.m_AmplitudeGain = rumbleAmount;
@@ -235,10 +268,13 @@ public class GraphicsManager : MonoBehaviour
         }
     }
 
-    private int nextSkyboxThreshold() {
+    private int nextSkyboxThreshold()
+    {
         var i = 0;
-        while(i < skyboxHeightThresholds.Count) {
-            if (currentHeight < skyboxHeightThresholds[i].Threshold) {
+        while (i < skyboxHeightThresholds.Count)
+        {
+            if (currentHeight < skyboxHeightThresholds[i].Threshold)
+            {
                 return i;
             }
             i++;
@@ -246,21 +282,24 @@ public class GraphicsManager : MonoBehaviour
         return i;
     }
 
-    private void configureSkyBox(Color skyColor, Color groundColor, float thickness, float exposure, float waterAlpha) {
+    private void configureSkyBox(Color skyColor, Color groundColor, float thickness, float exposure, float waterAlpha)
+    {
         skyboxMaterial.SetColor("_SkyTint", skyColor);
         skyboxMaterial.SetColor("_GroundColor", groundColor);
         skyboxMaterial.SetFloat("_AtmosphereThickness", thickness);
         skyboxMaterial.SetFloat("_Exposure", exposure);
         waterMaterial.SetFloat("_Alpha", waterAlpha);
     }
-    
-    private void enableBloom() {
+
+    private void enableBloom()
+    {
         bloom.intensity.Override(20.0f);
     }
 }
 
 [Serializable]
-public struct SkyboxHeightThreshold {
+public struct SkyboxHeightThreshold
+{
     public float Threshold;
     public Color SkyColor;
     public Color GroundColor;

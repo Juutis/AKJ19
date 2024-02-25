@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Mono.Cecil.Cil;
 using UnityEngine;
 
 public class BubbleLerp : MonoBehaviour
@@ -23,12 +20,17 @@ public class BubbleLerp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - spawned < lerpStart) {
+        if (Time.time - spawned < lerpStart)
+        {
             mat.SetColor("_BaseColor", origColor);
-        } else if (Time.time - spawned < lerpDuration + lerpStart) {
+        }
+        else if (Time.time - spawned < lerpDuration + lerpStart)
+        {
             var t = (Time.time - spawned - lerpStart) / lerpDuration;
             mat.SetColor("_BaseColor", Color.Lerp(origColor, targetColor, t));
-        } else {
+        }
+        else
+        {
             mat.SetColor("_BaseColor", targetColor);
         }
     }
