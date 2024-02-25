@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: You must construct additional pyl... star catchers!
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 2300
+  scoreRequirement: 35000
   requiredUpgrades:
   - {fileID: 11400000, guid: 47276561d144a7a4cb38c002acd0e783, type: 2}
   clickAmountMultiplier: 0

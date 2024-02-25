@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: For some reasong going from 5 to 6 catchers doubles the rate?
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 4500
+  scoreRequirement: 120000
   requiredUpgrades:
   - {fileID: 11400000, guid: ca8c14ce10e978845b2325c3a946317b, type: 2}
   clickAmountMultiplier: 0

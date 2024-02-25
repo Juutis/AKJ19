@@ -18,9 +18,10 @@ MonoBehaviour:
   LoreText: Armillary's speed is capped only by the risk of it melting down
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 30
+  scoreRequirement: 65000
   requiredUpgrades:
-  - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
+  - {fileID: 11400000, guid: ca8c14ce10e978845b2325c3a946317b, type: 2}
+  - {fileID: 11400000, guid: fcb8abd602a6e3f41aff47828808f031, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0

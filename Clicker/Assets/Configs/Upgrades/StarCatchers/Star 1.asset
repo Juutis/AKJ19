@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Star catcher
-  Description: Catch flying stars
+  Description: Star catcher allows you to catch stars and use them as money for other
+    upgrades
   LoreText: A magical net that catches stars
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 30
+  scoreRequirement: 50
   requiredUpgrades:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
   clickAmountMultiplier: 0

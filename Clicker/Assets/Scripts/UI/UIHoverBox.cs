@@ -12,7 +12,7 @@ public class UIHoverBox : MonoBehaviour
     [SerializeField]
     private RectTransform rt;
 
-    private float padding = 20f;
+    private float padding = 25f;
     private float minHeight = 80f;
     private float maxHeight = 240f;
 
@@ -28,7 +28,7 @@ public class UIHoverBox : MonoBehaviour
         //Rect rect = txtDescription.rectTransform.rect;
         //rt.sizeDelta = new Vector2(rect.width, rect.height + padding * 2);
         float textBoxHeight = Mathf.Clamp(preferred.y + padding * 3, minHeight, maxHeight);
-        txtFlavor.text = $"~{flavor}~";
+        txtFlavor.text = $"~ {flavor} ~";
         rt.sizeDelta = new Vector2(rt.sizeDelta.x, textBoxHeight);
         container.SetActive(true);
     }

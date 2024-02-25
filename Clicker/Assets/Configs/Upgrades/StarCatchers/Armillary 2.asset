@@ -18,9 +18,10 @@ MonoBehaviour:
   LoreText: Even magical brass joints need care
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 30
+  scoreRequirement: 2600
   requiredUpgrades:
-  - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
+  - {fileID: 11400000, guid: 1e6a969d63a6954499c631e9d7476988, type: 2}
+  - {fileID: 11400000, guid: 7d564dcdae6e5ac489f990ddf1423590, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0

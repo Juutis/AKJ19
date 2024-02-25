@@ -192,6 +192,7 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
                 ClickerManager.main.RegisterClick(clickerAction, Input.mousePosition, new() { ResourceName = upgradeConfig.UpgradeName });
                 Hide();
                 UIManager.main.HideHoverBox();
+                SoundManager.main.PlaySound(GameSoundType.Upgrade);
             }
         }
         else
