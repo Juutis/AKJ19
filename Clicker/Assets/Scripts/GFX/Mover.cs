@@ -11,11 +11,12 @@ public class Mover : MonoBehaviour
     private Vector3 origPosition;
     private Vector3 targetPosition;
 
+    private bool initialized = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        origPosition = transform.position;
-        targetPosition = transform.position + Vector3.down * totalDistance;
+        Init();
     }
 
     // Update is called once per frame
@@ -25,6 +26,13 @@ public class Mover : MonoBehaviour
     }
 
     public void SetPosition(float t) {
+        Init();
         transform.position = Vector3.Lerp(origPosition, targetPosition, t);
+    }
+
+    private void Init() {
+        if (initialized) return;
+        origPosition = transform.position;
+        targetPosition = transform.position + Vector3.down * totalDistance;
     }
 }

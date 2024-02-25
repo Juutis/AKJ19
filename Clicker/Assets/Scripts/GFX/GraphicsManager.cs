@@ -100,8 +100,8 @@ public class GraphicsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //testHeight = 50000000000000 + Time.deltaTime * 1.0;
-        //SetHeight(testHeight);
+        testHeight = 50000000 + Time.deltaTime * 1.0;
+        SetHeight(testHeight);
 
         var heightT = Math.Clamp((Time.time - lerpStarted) / heightLerpDuration, 0.0f, 1.0f);
         var heightDifference = targetHeight - lerpStartHeight;
@@ -221,7 +221,7 @@ public class GraphicsManager : MonoBehaviour
         }
 
         if (currentConfig.EnableObject != null) {
-            Debug.Log("NOT NULL");
+            Debug.Log("Activating " + currentConfig.EnableObject.gameObject);
             currentConfig.EnableObject.gameObject.SetActive(true);
             currentConfig.EnableObject.SetPosition(t);
         }
