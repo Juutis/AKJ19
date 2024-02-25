@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Click 6 Crystal
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Click +20
+  UpgradeName: Click +300
   Description: A huge boost in clicking
   LoreText: If one is good, more is better! Summon another crystal
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
@@ -22,7 +22,7 @@ MonoBehaviour:
   requiredUpgrades:
   - {fileID: 11400000, guid: c77caf28f28736c458577fb47d50dc57, type: 2}
   clickAmountMultiplier: 0
-  clickValueAddition: 1000
+  clickValueAddition: 300
   additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Click 5 Crystal
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Click +8
+  UpgradeName: Click +100
   Description: Clicking gives you more lift
   LoreText: Summon a magical crystal that enchances the inherent magical properties
     of the island

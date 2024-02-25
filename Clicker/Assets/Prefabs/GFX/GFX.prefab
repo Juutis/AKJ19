@@ -25670,7 +25670,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 7288026915275901122}
     Rumble: 0
-  - Threshold: 1.5e+11
+  - Threshold: 3e+9
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
     Thickness: 0
@@ -25683,7 +25683,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 467936554077150300}
     Rumble: 0
-  - Threshold: 5e+11
+  - Threshold: 5e+9
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
     Thickness: 0
@@ -25696,7 +25696,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 2681014602657275188}
     Rumble: 0
-  - Threshold: 1.5e+12
+  - Threshold: 7e+9
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
     Thickness: 0
@@ -25709,7 +25709,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
     Rumble: 0
-  - Threshold: 1.5e+12
+  - Threshold: 7e+9
     SkyColor: {r: 1, g: 0, b: 0.92941177, a: 1}
     GroundColor: {r: 1, g: 1, b: 1, a: 1}
     Thickness: 0.8
