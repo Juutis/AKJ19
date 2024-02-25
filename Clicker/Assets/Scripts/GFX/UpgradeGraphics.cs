@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UpgradeGraphics : MonoBehaviour
@@ -48,6 +49,16 @@ public class UpgradeGraphics : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetUpgrades(List<UpgradeConfig> upgrades) {
+        SetBalloonLevel(upgrades.Count(it => it.upgrade == UpgradePrefab.Balloon));
+        SetRocketLevel(upgrades.Count(it => it.upgrade == UpgradePrefab.RocketEngines));
+        SetCrystalLevel(upgrades.Count(it => it.upgrade == UpgradePrefab.Crystal));
+        SetCauldronLevel(upgrades.Count(it => it.upgrade == UpgradePrefab.Cauldron));
+        SetCatcherLevel(upgrades.Count(it => it.upgrade == UpgradePrefab.Catcher));
+        SetBubbleLevel(upgrades.Count(it => it.upgrade == UpgradePrefab.Dome));
+        SetDeviceLevel(upgrades.Count(it => it.upgrade == UpgradePrefab.StrangeDevice));
     }
 
     public void SetBalloonLevel(int level) {
