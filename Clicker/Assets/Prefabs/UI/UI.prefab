@@ -120,6 +120,58 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!1 &459080741313230479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785173453109832951}
+  - component: {fileID: 8286199049747274883}
+  m_Layer: 5
+  m_Name: ScorePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &785173453109832951
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459080741313230479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2953657984608428899}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8286199049747274883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459080741313230479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44cc3851299d1da468e15d2d6e2f183b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 7905565617510709586, guid: b786311247080804a92069b27b71fc54,
+    type: 3}
+  uiPoppingTextContainer: {fileID: 6657483813468897264}
+  poolSize: 30
 --- !u!1 &461150957500578000
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +436,8 @@ RectTransform:
   - {fileID: 5575996501474956745}
   - {fileID: 6657483813468897264}
   - {fileID: 2674177618232043441}
+  - {fileID: 785173453109832951}
+  - {fileID: 19275998912692023}
   m_Father: {fileID: 1781557340928447575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -649,6 +703,58 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
+--- !u!1 &1639369124453658071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19275998912692023}
+  - component: {fileID: 8737744998787461665}
+  m_Layer: 5
+  m_Name: StarPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &19275998912692023
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639369124453658071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2953657984608428899}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8737744998787461665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639369124453658071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44cc3851299d1da468e15d2d6e2f183b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 7905565617510709586, guid: 7b56a918ed200964da4077a029b8ee1d,
+    type: 3}
+  uiPoppingTextContainer: {fileID: 6657483813468897264}
+  poolSize: 30
 --- !u!1 &2535891869045572892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,10 +1119,13 @@ MonoBehaviour:
   gameRenderBox: {fileID: 6391064968779667617}
   uiPoppingTextPrefab: {fileID: 7905565617510709586, guid: b786311247080804a92069b27b71fc54,
     type: 3}
+  scorePopPool: {fileID: 8286199049747274883}
+  starPopPool: {fileID: 8737744998787461665}
   uiPoppingTextContainer: {fileID: 6657483813468897264}
   buttonContainer: {fileID: 8771109976902948299}
   starColor: {r: 1, g: 0.9607844, b: 0, a: 1}
   scoreColor: {r: 1, g: 0.4666667, b: 0, a: 1}
+  starMinInterval: 0.02
 --- !u!1 &5154975079584690231
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,10 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private UIPoppingText uiPoppingTextPrefab;
     [SerializeField]
+    private PoppingTextPool scorePopPool;
+    [SerializeField]
+    private PoppingTextPool starPopPool;
+    [SerializeField]
     private Transform uiPoppingTextContainer;
     [SerializeField]
     private Transform buttonContainer;
@@ -95,7 +99,8 @@ public class UIManager : MonoBehaviour
         } else {
             return;
         }
-        UIPoppingText uiPoppingText = Instantiate(uiPoppingTextPrefab, uiPoppingTextContainer);
+        //UIPoppingText uiPoppingText = Instantiate(uiPoppingTextPrefab, uiPoppingTextContainer);
+        UIPoppingText uiPoppingText = starPopPool.GetObject();
         Vector3[] corners = new Vector3[4];
         gameRenderBox.GetWorldCorners(corners);
         Vector3 randomPos = new Vector2(
@@ -108,7 +113,8 @@ public class UIManager : MonoBehaviour
 
     public void ShowPoppingText(string message, Vector3 position)
     {
-        UIPoppingText uiPoppingText = Instantiate(uiPoppingTextPrefab, uiPoppingTextContainer);
+        //UIPoppingText uiPoppingText = Instantiate(uiPoppingTextPrefab, uiPoppingTextContainer);
+        UIPoppingText uiPoppingText = scorePopPool.GetObject();
         uiPoppingText.Show(position, message, scoreColor);
     }
 
