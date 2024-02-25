@@ -19,7 +19,7 @@ MonoBehaviour:
     for purchase
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 100
+  scoreRequirement: 250
   requiredUpgrades:
   - {fileID: 11400000, guid: 38e57565dbeb7f548b684994f292daed, type: 2}
   clickAmountMultiplier: 0

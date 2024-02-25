@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Armillary
-  Description: More efficient star refining
+  Description: Building Armillary allows you to get more star value out of each star
+    caught
   LoreText: A strange contraption that somehow helps extracting the essence of a
     star
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 30
+  scoreRequirement: 560
   requiredUpgrades:
   - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
   clickAmountMultiplier: 0

@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: More caffeine!
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 5
-  scoreRequirement: 1
+  scoreRequirement: 5800
   requiredUpgrades:
   - {fileID: 11400000, guid: 77d330aa9643b454fb1dceb081971d4d, type: 2}
   clickAmountMultiplier: 0
