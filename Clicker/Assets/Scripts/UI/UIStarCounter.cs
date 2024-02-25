@@ -1,8 +1,7 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UIScoreText : MonoBehaviour
+public class UIStarCounter : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI scoreText;

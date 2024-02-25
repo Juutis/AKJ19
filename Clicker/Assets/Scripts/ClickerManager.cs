@@ -53,6 +53,7 @@ public class ClickerManager : MonoBehaviour
         clickFrequency = gameConfig.InitialClickHoldFrequency;
         noDomeMaxScore = new(gameConfig.NoDomeMaxScore);
         starValue = gameConfig.StarValue;
+        UIManager.main.UpdateMoney(money.value);
     }
 
     private void Update()
@@ -132,6 +133,7 @@ public class ClickerManager : MonoBehaviour
         }
 
         money.Decrease(upgrade.moneyRequirement);
+        UIManager.main.UpdateMoney(money.value);
         boughtUpgrades.Add(upgrade);
 
         additionalClickers += upgrade.additionalClickersAdded;
@@ -209,6 +211,7 @@ public class ClickerManager : MonoBehaviour
     public void GetStar()
     {
         money.Increase(starValue);
+        UIManager.main.UpdateMoney(money.value);
         Debug.Log(money.value);
     }
 }

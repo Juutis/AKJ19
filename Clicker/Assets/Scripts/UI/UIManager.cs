@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private UIScoreText uiScoreText;
     [SerializeField]
+    private UIStarCounter uiMoneyText;
+    [SerializeField]
     private UIHoverBox uiHoverBox;
 
     [SerializeField]
@@ -52,6 +54,11 @@ public class UIManager : MonoBehaviour
     {
         UIPoppingText uiPoppingText = Instantiate(uiPoppingTextPrefab, uiPoppingTextContainer);
         uiPoppingText.Show(position, message);
+    }
+
+    public void UpdateMoney(System.Numerics.BigInteger newMoney)
+    {
+        uiMoneyText.UpdateScore(newMoney);
     }
 
     public void UpdateScore(System.Numerics.BigInteger newScore)
