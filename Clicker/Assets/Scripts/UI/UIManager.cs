@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -48,6 +49,23 @@ public class UIManager : MonoBehaviour
     public void AddButton(UIClickerButton button)
     {
         button.transform.SetParent(buttonContainer, false);
+
+        List<UIClickerButton> buttons = new();
+
+        foreach (Transform transform in buttonContainer)
+        {
+            if (transform.TryGetComponent<UIClickerButton>(out UIClickerButton otherButton))
+            {
+                buttons.Add(otherButton);
+            }
+        }
+
+        buttons = buttons.OrderBy(x => new BigNumber(x.UpgradeConfig.scoreRequirement)).ToList();
+
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            buttons[i].transform.SetSiblingIndex(i);
+        }
     }
 
     public void ShowPoppingText(string message, Vector3 position)
