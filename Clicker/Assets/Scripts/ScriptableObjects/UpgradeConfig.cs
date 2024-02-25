@@ -27,6 +27,8 @@ public class UpgradeConfig : ScriptableObject
     public bool isDome;
     public bool clickHoldEnabled;
     public string passiveScoreIncrease;
+    public int starCaughtValueAddition;
+    public int starCaughtFrequencyAddition;
 }
 
 public enum UpgradeType
