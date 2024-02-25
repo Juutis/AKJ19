@@ -32,6 +32,8 @@ public class ClickerManager : MonoBehaviour
     private bool hasDome = false;
     private bool clickHoldEnabled = false;
     private float starFlyDuration = 0;
+    private float starFrequency = 0.1f;
+    private float lastStar = 10f;
 
     public bool ClickHoldEnabled { get { return clickHoldEnabled; } }
     private int starValue;
@@ -77,9 +79,10 @@ public class ClickerManager : MonoBehaviour
             CheckUpgrades();
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (starFrequency != 0 && Time.time - lastStar > (1 / starFrequency))
         {
-            Invoke("GetStar", starFlyDuration);
+            GetStar();
+            lastStar = Time.time;
         }
     }
 
@@ -139,6 +142,8 @@ public class ClickerManager : MonoBehaviour
         hasDome |= upgrade.isDome;
         clickHoldEnabled |= upgrade.clickHoldEnabled;
         passiveScoreIncrease.Increase(upgrade.passiveScoreIncrease);
+        starValue += upgrade.starCaughtValueAddition;
+        starFrequency += upgrade.starCaughtFrequencyAddition;
     }
 
     public string GetScore()
