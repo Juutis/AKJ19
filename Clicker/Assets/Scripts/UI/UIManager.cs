@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Version 1.0");
+        Debug.Log("Version 1.5");
     }
 
     public void End() {
