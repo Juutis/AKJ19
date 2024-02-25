@@ -35,7 +35,13 @@ public class UpgradeGraphics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetBalloonLevel(0);
+        SetRocketLevel(0);
+        SetCrystalLevel(0);
+        SetCauldronLevel(0);
+        SetBubbleLevel(0);
+        SetCatcherLevel(0);
+        SetDeviceLevel(0);
     }
 
     // Update is called once per frame
