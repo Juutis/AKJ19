@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Another Cauldron lvl4
-  Description: Cauldron's potion doubles its effect
+  Description: Bubbles in the cauldron propel you upwards (automatic clicker)
   LoreText: There might be a chance the gasses are addicting. But catching stars
     is even more addicting!
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}

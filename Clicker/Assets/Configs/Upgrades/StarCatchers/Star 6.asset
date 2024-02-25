@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Additional star cather
-  Description: Double the catching rate
+  Description: Star catcher allows you to catch stars and use them as money for other
+    upgrades
   LoreText: For some reasong going from 5 to 6 catchers doubles the rate?
   Icon: {fileID: 0}
-  moneyRequirement: 1200
+  moneyRequirement: 20000
   scoreRequirement: 120000
   requiredUpgrades:
   - {fileID: 11400000, guid: ca8c14ce10e978845b2325c3a946317b, type: 2}
@@ -31,4 +32,4 @@ MonoBehaviour:
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 0
-  starCaughtFrequencyAddition: 1.2
+  starCaughtFrequencyAddition: 100

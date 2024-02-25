@@ -19,7 +19,7 @@ MonoBehaviour:
   LoreText: A magical net that catches stars
   Icon: {fileID: 0}
   moneyRequirement: 0
-  scoreRequirement: 50
+  scoreRequirement: 10
   requiredUpgrades:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
   clickAmountMultiplier: 0

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Cauldron
-  Description: Bubbles in the cauldron propels you upwards (automatic clicker)
-  LoreText: Potion in the cauldron slowly creates bubbles that life the island when
+  Description: Bubbles in the cauldron propel you upwards (automatic clicker)
+  LoreText: Potion in the cauldron slowly creates bubbles that lift the island when
     they pop
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 3

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Caustic Brew
-  Description: Massive clicking boost!
+  Description: Bubbles in the cauldron propel you upwards (automatic clicker)
   LoreText: Zarguuf threw in some unsavory reagent to make the potion to really pop
     off
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}

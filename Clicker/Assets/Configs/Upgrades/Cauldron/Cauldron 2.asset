@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Another Cauldron
-  Description: Cauldron's potion doubles its effect
+  Description: Bubbles in the cauldron propel you upwards (automatic clicker)
   LoreText: Cauldron seemed to be such a good idea that another is probably even
     better!
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
