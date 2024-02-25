@@ -13,6 +13,11 @@ public class UIPoppingText : MonoBehaviour
     private float yOffset = 20f;
     private float randomXFactor = 20f;
     private float randomYFactor = 5f;
+    PoppingTextPool pool;
+
+    public void Init(PoppingTextPool pool) {
+        this.pool = pool;
+    }
 
     public void Show(Vector3 position, string message, Color color)
     {
@@ -26,7 +31,8 @@ public class UIPoppingText : MonoBehaviour
 
     public void ShowFinished()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        pool.ReturnObject(this);
     }
 }
 
