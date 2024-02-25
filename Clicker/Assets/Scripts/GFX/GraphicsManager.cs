@@ -104,7 +104,7 @@ public class GraphicsManager : MonoBehaviour
 
         var targetWaterLevel = -currentHeight + 1;
         if (targetWaterLevel > 0) targetWaterLevel = 0;
-        if (targetWaterLevel < -20) targetWaterLevel = -20;
+        if (targetWaterLevel < -2000) targetWaterLevel = -2000;
         water.transform.position = new Vector3(water.transform.position.x, origWaterLevel + (float)targetWaterLevel, water.transform.position.z);
 
         var cameraOrbitSpeed = (currentHeight - 5) * 5;
