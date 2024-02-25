@@ -36,5 +36,10 @@ public enum UpgradePrefab
 {
     Balloon,
     RocketEngines,
-    Dome
+    Dome,
+    Crystal,
+    Catcher,
+    Cauldron,
+    StrangeDevice,
+    None
 }

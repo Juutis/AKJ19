@@ -157,6 +157,8 @@ public class ClickerManager : MonoBehaviour
         passiveScoreIncrease.Increase(upgrade.passiveScoreIncrease);
         starValue += upgrade.starCaughtValueAddition;
         starFrequency += upgrade.starCaughtFrequencyAddition;
+
+        UpgradeGraphics.Main.SetUpgrades(boughtUpgrades);
     }
 
     public string GetScore()
