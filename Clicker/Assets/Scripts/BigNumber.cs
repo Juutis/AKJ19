@@ -3,6 +3,7 @@ using System.Numerics;
 using System.Text;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -130,7 +131,11 @@ public class BigNumber : IComparable
         {
             return CompareTo(other as string);
         }
-        else if (other is int || other is double || other is float || other is BigInteger)
+        else if (other is int || other is double || other is float)
+        {
+            return value.CompareTo(new BigInteger((int)other));
+        }
+        else if (other is BigInteger)
         {
             return value.CompareTo(other);
         }

@@ -10,26 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: Cauldron 2
+  m_Name: DomeUpgrade
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Another Cauldron
-  Description: Cauldron's potion doubles its effect
-  LoreText: Cauldron seemed to be such a good idea that another is probably even
-    better!
-  Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
-  scoreRequirement: 300
+  UpgradeName: Dome
+  Description: Let's you go beyond the atmosphere
+  LoreText: No, he doesn't need the dome. He's a powerful wizard. It's just that,
+    he likes it that way.
+  Icon: {fileID: 0}
+  moneyRequirement: 150
+  scoreRequirement: 35000
   requiredUpgrades:
-  - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
-  - {fileID: 11400000, guid: a1141028e39fc654ab2f2ccf6237c678, type: 2}
+  - {fileID: 11400000, guid: c3a1e4e0aa390784db14ce4d8a53f969, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
-  additionalClickersAdded: 1
+  additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
-  upgrade: 0
-  isDome: 0
+  upgrade: 2
+  isDome: 1
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 0

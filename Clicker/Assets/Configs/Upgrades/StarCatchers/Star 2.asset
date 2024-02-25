@@ -15,12 +15,8 @@ MonoBehaviour:
   UpgradeType: 0
   UpgradeName: Additional star catcher
   Description: Double the catching rate
-  LoreText: 'Recent changes in the star dust
-
-    economy resulted in more
-
-    nets
-    to be available for purchase'
+  LoreText: Recent changes in the star dust economy resulted in more nets to be available
+    for purchase
   Icon: {fileID: 0}
   moneyRequirement: 
   scoreRequirement: 100

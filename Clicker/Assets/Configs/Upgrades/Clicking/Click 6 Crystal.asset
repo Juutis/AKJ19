@@ -15,9 +15,7 @@ MonoBehaviour:
   UpgradeType: 0
   UpgradeName: Click +8
   Description: A huge boost in clicking
-  LoreText: 'If one is good, more is better!
-
-    Summon another crystal'
+  LoreText: If one is good, more is better! Summon another crystal
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
   scoreRequirement: 20

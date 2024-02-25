@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Armillary 3
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Star Catcher 2000
-  Description: "\t"
-  LoreText: 
+  UpgradeName: Ceramic ball bearings
+  Description: Armillary's effect is doubled
+  LoreText: Armillary's speed is capped only by the risk of it melting down
   Icon: {fileID: 0}
   moneyRequirement: 
   scoreRequirement: 30
@@ -30,5 +30,5 @@ MonoBehaviour:
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
-  starCaughtValueAddition: 8
+  starCaughtValueAddition: 14
   starCaughtFrequencyAddition: 0

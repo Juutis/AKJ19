@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Armillary 1
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Star Catcher 2000
-  Description: "\t"
-  LoreText: 
+  UpgradeName: Armillary
+  Description: More efficient star refining
+  LoreText: A strange contraption that somehow helps extracting the essence of a
+    star
   Icon: {fileID: 0}
   moneyRequirement: 
   scoreRequirement: 30
