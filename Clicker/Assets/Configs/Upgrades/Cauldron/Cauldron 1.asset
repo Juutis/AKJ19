@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Cauldron 1
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Click buddy
-  Description: Button gets clicked automatically
-  LoreText: Sometimes you need to ask a favor from a friend
+  UpgradeName: Cauldron
+  Description: Bubbles in the cauldron propels you upwards (auto click)
+  LoreText: Potion in the cauldron slowly creates bubbles that life the island when
+    they pop
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
   scoreRequirement: 20
@@ -30,3 +31,5 @@ MonoBehaviour:
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
+  starCaughtValueAddition: 0
+  starCaughtFrequencyAddition: 0
