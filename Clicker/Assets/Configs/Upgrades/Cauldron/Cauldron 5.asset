@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cauldron 5
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Another Cauldron lvl4
+  UpgradeName: Cauldron V
   Description: Bubbles in the cauldron propel you upwards (automatic clicker)
   LoreText: There might be a chance the gasses are addicting. But catching stars
     is even more addicting!

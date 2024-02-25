@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Star 4
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Additional star catcher
+  UpgradeName: Star Catcher IV
   Description: Star catcher allows you to catch stars and use them as money for other
     upgrades
   LoreText: The current hypothesis is that more nets you have, the more stars you

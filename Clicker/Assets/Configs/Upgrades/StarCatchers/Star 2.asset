@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Star 2
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Additional star catcher
+  UpgradeName: Star Catcher II
   Description: Star catcher allows you to catch stars and use them as money for other
     upgrades
   LoreText: Recent changes in the star dust economy resulted in more nets to be available

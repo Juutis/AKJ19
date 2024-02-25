@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cauldron 4
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Another Cauldron lvl3
+  UpgradeName: Cauldron IV
   Description: Bubbles in the cauldron propel you upwards (automatic clicker)
   LoreText: Zarguuf really loves the smell of nose hair burning potion gas
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}

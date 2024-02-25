@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Star 1
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Star catcher
+  UpgradeName: Star Catcher
   Description: Star catcher allows you to catch stars and use them as money for other
     upgrades
   LoreText: A magical net that catches stars
