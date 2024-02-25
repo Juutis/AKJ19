@@ -18,7 +18,7 @@ MonoBehaviour:
     upgrades
   LoreText: Catch all the stars!
   Icon: {fileID: 0}
-  moneyRequirement: 100000
+  moneyRequirement: 250000
   scoreRequirement: 250000
   requiredUpgrades:
   - {fileID: 11400000, guid: e046ee366b97d8440bc27863e03fdac3, type: 2}

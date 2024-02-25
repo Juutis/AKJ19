@@ -177,6 +177,8 @@ public class GraphicsManager : MonoBehaviour
             configureSkyBox(config.SkyColor, config.GroundColor, config.Thickness, config.Exposure, config.WaterAlpha);
             island.Launch();
             enableBloom();
+            cameraNoise.m_AmplitudeGain = 0;
+            cameraNoise.m_FrequencyGain = 0;
             return;
         }
 
