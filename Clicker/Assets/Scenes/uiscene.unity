@@ -756,6 +756,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
   - {fileID: 11400000, guid: c3a1e4e0aa390784db14ce4d8a53f969, type: 2}
   - {fileID: 11400000, guid: a1141028e39fc654ab2f2ccf6237c678, type: 2}
+  - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
+  - {fileID: 11400000, guid: 7d564dcdae6e5ac489f990ddf1423590, type: 2}
+  - {fileID: 11400000, guid: 38e57565dbeb7f548b684994f292daed, type: 2}
   clickerButtonPrefab: {fileID: 5127830512815742122, guid: 51a2c874590e19042a1292525567a9e7,
     type: 3}
 --- !u!4 &1841167076

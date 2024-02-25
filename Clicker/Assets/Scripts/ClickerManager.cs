@@ -31,7 +31,6 @@ public class ClickerManager : MonoBehaviour
     private float lastClick = 0;
     private bool hasDome = false;
     private bool clickHoldEnabled = false;
-    private float starFlyDuration = 0;
     private float starFrequency = 0.1f;
     private float lastStar = 10f;
 
@@ -43,6 +42,7 @@ public class ClickerManager : MonoBehaviour
 
     private float upgradeCheckTimer = 0f;
     private float upgradeCheckInterval = 1f;
+    private Vector3 prevClickPos = Vector3.zero;
 
     private void Start()
     {
@@ -53,16 +53,15 @@ public class ClickerManager : MonoBehaviour
         clickFrequency = gameConfig.InitialClickHoldFrequency;
         noDomeMaxScore = new(gameConfig.NoDomeMaxScore);
         starValue = gameConfig.StarValue;
-        starFlyDuration = gameConfig.StarFlyDuration;
     }
 
     private void Update()
     {
-        if (Time.time - lastClick >= (1f / clickFrequency))
+        if (Time.time - lastClick >= (1f / clickFrequency) && additionalClickers > 0)
         {
             System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower, additionalClickers);
             lastClick = Time.time;
-            // UIManager.main.ShowPoppingText($"+{increment:N0}", position);
+            UIManager.main.ShowPoppingText($"+{increment:N0}", prevClickPos);
             UIManager.main.UpdateScore(mainScore.value);
         }
 
@@ -93,6 +92,7 @@ public class ClickerManager : MonoBehaviour
             System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower);
             UIManager.main.ShowPoppingText($"+{increment:N0}", position);
             UIManager.main.UpdateScore(mainScore.value);
+            prevClickPos = position;
         }
         if (action == ClickerAction.BuyUpgrade)
         {
