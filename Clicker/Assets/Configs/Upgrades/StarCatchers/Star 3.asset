@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: UP-Autoclicker
+  m_Name: Star 3
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Click buddy
-  Description: Button gets clicked automatically
-  LoreText: Sometimes you need to ask a favor from a friend
-  Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
-  scoreRequirement: 20
-  requiredUpgrades:
-  - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
+  UpgradeName: Star Catcher
+  Description: You can now catch stars
+  LoreText: 
+  Icon: {fileID: 0}
+  moneyRequirement: 
+  scoreRequirement: 30
+  requiredUpgrades: []
   clickAmountMultiplier: 0
   clickValueAddition: 0
-  additionalClickersAdded: 1
+  additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
   upgrade: 0
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
+  starCaughtValueAddition: 0
+  starCaughtFrequencyAddition: 1

@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: UP-StarCatcher
+  m_Name: Star 1
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Star Catcher
-  Description: You can now catch stars
+  UpgradeName: Additional catcher
+  Description: Another catcher
   LoreText: 
   Icon: {fileID: 0}
   moneyRequirement: 
   scoreRequirement: 30
-  requiredUpgrades: []
+  requiredUpgrades:
+  - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
+  - {fileID: 11400000, guid: 7d564dcdae6e5ac489f990ddf1423590, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0
@@ -30,4 +32,4 @@ MonoBehaviour:
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 1
-  starCaughtFrequencyAddition: 1
+  starCaughtFrequencyAddition: 2
