@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: UP-ClickPlus1
+  m_Name: Click 2
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Click +1
-  Description: Each click is now worth 1 more
-  LoreText: Some clicks are worth more than others
+  UpgradeName: Click +2
+  Description: Each click is now worth 2 more
+  LoreText: Some clicks are worth even more than others
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 5
-  scoreRequirement: 10
-  requiredUpgrades: []
+  moneyRequirement: 0
+  scoreRequirement: 20
+  requiredUpgrades:
+  - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
   clickAmountMultiplier: 0
-  clickValueAddition: 1
+  clickValueAddition: 2
   additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
