@@ -20116,7 +20116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3424167061922599831}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.065124616, y: 0.91629446, z: -0.16650684, w: -0.3583836}
+  m_LocalRotation: {x: -0.065124616, y: 0.91629446, z: -0.16650686, w: -0.35838363}
   m_LocalPosition: {x: 11.848179, y: 2.6835577, z: 12.829323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25577,7 +25577,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 3074572354411763021}
     Rumble: 0
-    fov: 0
+    fov: 80
   - Threshold: 500000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25591,7 +25591,7 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 6206167825151027737}
     Rumble: 0
-    fov: 0
+    fov: 90
   - Threshold: 1500000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -25605,7 +25605,7 @@ MonoBehaviour:
     ShowAsteroids: 1
     EnableObject: {fileID: 0}
     Rumble: 1
-    fov: 0
+    fov: 90
   - Threshold: 5000000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -36054,8 +36054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7360554540542760047}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000018626449, y: 0.000000029802319, z: -0.0000000037252899,
-    w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46955,7 +46954,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 10000
+      value: 11000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
@@ -48631,7 +48630,7 @@ PrefabInstance:
     - target: {fileID: 1860050774967024361, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
       propertyPath: totalDistance
-      value: 5000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 2234293680536673271, guid: 799ae255ff8e4c94c95beaadc1174578,
         type: 3}
