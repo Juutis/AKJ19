@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -36,7 +37,12 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!canSpawnStar) {
+            starTimer += Time.deltaTime;
+            if (starTimer > starMinInterval) {
+                canSpawnStar = true;
+            }
+        }
     }
 
     public void ShowHoverBox(string description, string flavor)
@@ -75,12 +81,21 @@ public class UIManager : MonoBehaviour
     private Color starColor;
     [SerializeField]
     private Color scoreColor;
-    private float starPadding = 5f;
+
+    [SerializeField]
+    private float starMinInterval = 0.02f;
+    private float starTimer = 0f;
+    private bool canSpawnStar = true;
 
     public void ShowPoppingStarText(string message)
     {
+        if (canSpawnStar) {
+            starTimer = 0f;
+            canSpawnStar = false;
+        } else {
+            return;
+        }
         UIPoppingText uiPoppingText = Instantiate(uiPoppingTextPrefab, uiPoppingTextContainer);
-        
         Vector3[] corners = new Vector3[4];
         gameRenderBox.GetWorldCorners(corners);
         Vector3 randomPos = new Vector2(
