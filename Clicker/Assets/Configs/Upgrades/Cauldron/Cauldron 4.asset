@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: Cauldron 1
+  m_Name: Cauldron 4
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Cauldron
-  Description: Bubbles in the cauldron propels you upwards (auto click)
-  LoreText: Potion in the cauldron slowly creates bubbles that life the island when
-    they pop
+  UpgradeName: Another Cauldron
+  Description: Cauldron's potion doubles its effect
+  LoreText: Zarguuf really loves the smell of nose hair burning potion gas
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
-  scoreRequirement: 20
+  scoreRequirement: 800
   requiredUpgrades:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
+  - {fileID: 11400000, guid: dd5586702e3a8b74ebc7d0b9a7ee30f4, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
-  additionalClickersAdded: 1
+  additionalClickersAdded: 4
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
   upgrade: 0

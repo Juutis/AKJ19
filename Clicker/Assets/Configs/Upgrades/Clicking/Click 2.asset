@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Click +2
-  Description: Each click is now worth 2 more
+  Description: Clicking gives you +1 lift
   LoreText: Some clicks are worth even more than others
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   requiredUpgrades:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
   clickAmountMultiplier: 0
-  clickValueAddition: 2
+  clickValueAddition: 1
   additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
@@ -30,3 +30,5 @@ MonoBehaviour:
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
+  starCaughtValueAddition: 0
+  starCaughtFrequencyAddition: 0
