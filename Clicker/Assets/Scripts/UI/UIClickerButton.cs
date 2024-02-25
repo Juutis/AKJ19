@@ -14,6 +14,8 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     [SerializeField]
     private TextMeshProUGUI txtCost;
     [SerializeField]
+    private UIScoreText scoreReq;
+    [SerializeField]
     private Image imgBg;
 
     [SerializeField]
@@ -34,6 +36,9 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
     private Color hoverBgColor;
     [SerializeField]
     private Color clickBgColor;
+
+    [SerializeField]
+    private Image imgStar;
 
     private bool isDisabled = false;
     public bool IsDisabled { get { return isDisabled; } }
@@ -69,7 +74,12 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         costContainer.gameObject.SetActive(true);
         txtCost.text = $"{config.moneyRequirement:N0}";
         txtTitle.text = config.UpgradeName.ToUpper();
-
+        RectTransform rt = imgStar.rectTransform;
+        float xOffset = txtCost.text.Length * txtCost.fontSize / 2f;
+        rt.anchoredPosition = new Vector2(rt.anchoredPosition.x + Mathf.Clamp(xOffset, txtCost.fontSize, 999f), rt.anchoredPosition.y);
+        System.Numerics.BigInteger req;
+        System.Numerics.BigInteger.TryParse(config.scoreRequirement, out req);
+        scoreReq.SetScore(req);
     }
 
     public void Disable()
