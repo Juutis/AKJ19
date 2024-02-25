@@ -13,13 +13,19 @@ MonoBehaviour:
   m_Name: Star 2
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Star Catcher
-  Description: You can now catch stars
-  LoreText: 
+  UpgradeName: Additional star catcher
+  Description: Double the catching rate
+  LoreText: 'Recent changes in the star dust
+
+    economy resulted in more
+
+    nets
+    to be available for purchase'
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 30
-  requiredUpgrades: []
+  scoreRequirement: 100
+  requiredUpgrades:
+  - {fileID: 11400000, guid: 38e57565dbeb7f548b684994f292daed, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0

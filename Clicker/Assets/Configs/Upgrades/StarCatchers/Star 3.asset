@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Star 3
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Star Catcher
-  Description: You can now catch stars
-  LoreText: 
+  UpgradeName: Additional star cather
+  Description: Double the catching rate
+  LoreText: Less is more... how can that be? It's impossible... more is more
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 30
-  requiredUpgrades: []
+  scoreRequirement: 450
+  requiredUpgrades:
+  - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0

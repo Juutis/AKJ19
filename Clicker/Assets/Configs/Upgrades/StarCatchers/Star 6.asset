@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: Star 1
+  m_Name: Star 6
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Star catcher
-  Description: Catch flying stars
-  LoreText: A magical net that catches stars
+  UpgradeName: Additional star cather
+  Description: Double the catching rate
+  LoreText: For some reasong going from 5 to 6 catchers doubles the rate?
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 30
+  scoreRequirement: 4500
   requiredUpgrades:
-  - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
+  - {fileID: 11400000, guid: ca8c14ce10e978845b2325c3a946317b, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0
@@ -30,5 +30,5 @@ MonoBehaviour:
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
-  starCaughtValueAddition: 1
+  starCaughtValueAddition: 0
   starCaughtFrequencyAddition: 1
