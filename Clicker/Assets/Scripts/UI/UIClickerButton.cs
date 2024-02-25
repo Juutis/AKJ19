@@ -87,7 +87,6 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         imgBg.color = disabledBgColor;
         txtTitle.color = disabledTextColor;
         isDisabled = true;
-        Debug.Log("IsDisabled");
     }
 
     public void Enable()
@@ -95,7 +94,6 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         imgBg.color = bgColor;
         txtTitle.color = textColor;
         isDisabled = false;
-        Debug.Log("IsEnabled");
     }
 
     public void Hide()
@@ -199,7 +197,7 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         }
         else
         {
-            Debug.Log("ClickerManager is missing from scene");
+            Debug.LogWarning("ClickerManager is missing from scene");
         }
 
         Invoke("Highlight", clickHightlightDuration);
@@ -207,13 +205,11 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //Debug.Log("Button Clicked!");
         Click();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //Debug.Log("entered");
         Highlight();
     }
 

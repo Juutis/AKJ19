@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: Less is more... how can that be? It's impossible... more is more
   Icon: {fileID: 0}
   moneyRequirement: 
-  scoreRequirement: 450
+  scoreRequirement: 2550
   requiredUpgrades:
   - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
   clickAmountMultiplier: 0
