@@ -33,6 +33,7 @@ public class ClickerManager : MonoBehaviour
     private bool clickHoldEnabled = false;
     private float starFrequency = 0.1f;
     private float lastStar = 10f;
+    private float lastPassiveIncome = 0;
 
     public bool ClickHoldEnabled { get { return clickHoldEnabled; } }
     private int starValue;
@@ -71,10 +72,9 @@ public class ClickerManager : MonoBehaviour
             UIManager.main.ShowPoppingText($"+{increment:N0}", prevClickPos);
         }
 
-        if (passiveScoreIncrease.CompareTo(0) > 0)
+        if (passiveScoreIncrease.CompareTo(0) > 0 && (Time.time - lastPassiveIncome > 1))
         {
-            BigNumber scorePerFrame = BigNumber.Multiply(passiveScoreIncrease, Time.deltaTime);
-            mainScore.Increase(scorePerFrame);
+            mainScore.Increase(passiveScoreIncrease);
         }
 
         upgradeCheckTimer += Time.deltaTime;
@@ -84,7 +84,7 @@ public class ClickerManager : MonoBehaviour
             CheckUpgrades();
         }
 
-        if (starFrequency != 0 && Time.time - lastStar > (1 / starFrequency))
+        if (starFrequency != 0 && (Time.time - lastStar > (1 / starFrequency)))
         {
             GetStar();
             lastStar = Time.time;

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b5342802a91534d9289b93cbd627a7, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  <InitialClickHoldFrequency>k__BackingField: 3
+  <InitialClickHoldFrequency>k__BackingField: 0
   <InitialClickAmount>k__BackingField: 1
-  <InitialMoney>k__BackingField: 5
+  <InitialMoney>k__BackingField: 0
   <NoDomeMaxScore>k__BackingField: 50000
   <StarValue>k__BackingField: 1
