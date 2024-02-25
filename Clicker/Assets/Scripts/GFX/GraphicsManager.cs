@@ -31,6 +31,8 @@ public class GraphicsManager : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem stars;
+    [SerializeField]
+    private ParticleSystem asteroids;
 
     private CinemachineBasicMultiChannelPerlin cameraNoise;
     private CinemachineDollyCart cameraDolly;
@@ -55,7 +57,7 @@ public class GraphicsManager : MonoBehaviour
         Main = this;
     }
 
-    private double testHeight = 0;
+    private double testHeight = 250;
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +75,7 @@ public class GraphicsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        testHeight = testHeight + Time.deltaTime * 50.0f;
+        testHeight = testHeight + Time.deltaTime * 0.0f;
         SetHeight(testHeight);
 
 
@@ -165,6 +167,14 @@ public class GraphicsManager : MonoBehaviour
             stars.Stop();
         }
 
+        if (currentConfig.ShowAsteroids) {
+            if (asteroids.isStopped) {
+                asteroids.Play();
+            }
+        } else {
+            asteroids.Stop();
+        }
+
         if (currentConfig.EnableObject != null) {
             currentConfig.EnableObject.SetActive(true);
         }
@@ -211,6 +221,7 @@ public struct SkyboxHeightThreshold {
     public bool ShowSpeedStripes;
     public bool SpawnSpeedStars;
     public bool ShowStars;
+    public bool ShowAsteroids;
     public GameObject EnableObject;
     public float Rumble;
 }
