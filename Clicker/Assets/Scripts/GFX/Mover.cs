@@ -8,6 +8,9 @@ public class Mover : MonoBehaviour
     [SerializeField]
     private float totalDistance = 1000.0f;
 
+    [SerializeField]
+    private AnimationCurve curve;
+
     private Vector3 origPosition;
     private Vector3 targetPosition;
 
@@ -27,12 +30,16 @@ public class Mover : MonoBehaviour
 
     public void SetPosition(float t) {
         Init();
-        transform.position = Vector3.Lerp(origPosition, targetPosition, t);
+        t = Mathf.Clamp(t, 0.0f, 1.0f);
+        transform.position = Vector3.Lerp(origPosition, targetPosition, curve.Evaluate(t));
     }
 
     private void Init() {
         if (initialized) return;
         origPosition = transform.position;
         targetPosition = transform.position + Vector3.down * totalDistance;
+        curve.preWrapMode = WrapMode.Clamp;
+        curve.postWrapMode = WrapMode.Clamp;
+        initialized = true;
     }
 }
