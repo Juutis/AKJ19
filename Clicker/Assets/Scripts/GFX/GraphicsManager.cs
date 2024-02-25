@@ -70,6 +70,9 @@ public class GraphicsManager : MonoBehaviour
 
     private Bloom bloom;
 
+    [SerializeField]
+    private AudioSource music;
+
     void Awake() {
         Main = this;
     }
@@ -128,6 +131,10 @@ public class GraphicsManager : MonoBehaviour
         if (cameraOrbitSpeed < 0) cameraOrbitSpeed = 0;
         if (cameraOrbitSpeed > 10) cameraOrbitSpeed = 10;
         cameraDolly.m_Speed = (float)cameraOrbitSpeed;
+
+        if (cameraOrbitSpeed > 0 && !music.isPlaying) {
+            music.Play();
+        }
 
         if (targetHeight != nextTargetHeight) {
             targetHeight = nextTargetHeight;
