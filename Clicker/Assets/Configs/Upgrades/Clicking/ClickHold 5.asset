@@ -17,8 +17,8 @@ MonoBehaviour:
   Description: Holding the click produces lift faster
   LoreText: Focus is 150% on the spell casting now
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 100
-  scoreRequirement: 33600
+  moneyRequirement: 5000
+  scoreRequirement: 50000
   requiredUpgrades:
   - {fileID: 11400000, guid: c85fa5d1dbc5cf64bb24fdd137e5c231, type: 2}
   clickAmountMultiplier: 0

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Thruster III
-  Description: Gives extra lift! +128 Lift/s
+  Description: Gives extra lift! +30000 Lift/s
   LoreText: What even fuels these things??
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
-  scoreRequirement: 3000
+  moneyRequirement: 15000
+  scoreRequirement: 150000
   requiredUpgrades:
   - {fileID: 11400000, guid: e3b0ab5f9954d7646946a9444f8d872d, type: 2}
   clickAmountMultiplier: 0
@@ -29,6 +29,6 @@ MonoBehaviour:
   upgrade: 1
   isDome: 0
   clickHoldEnabled: 0
-  passiveScoreIncrease: 128
+  passiveScoreIncrease: 30000
   starCaughtValueAddition: 0
   starCaughtFrequencyAddition: 0

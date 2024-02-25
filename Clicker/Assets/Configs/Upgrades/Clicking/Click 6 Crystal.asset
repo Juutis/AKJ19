@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: A huge boost in clicking
   LoreText: If one is good, more is better! Summon another crystal
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
+  moneyRequirement: 1000
   scoreRequirement: 3200
   requiredUpgrades:
   - {fileID: 11400000, guid: c77caf28f28736c458577fb47d50dc57, type: 2}

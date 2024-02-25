@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Thruster I
-  Description: Gives extra lift! +32 Lift/s
+  Description: Gives extra lift! +2000 Lift/s
   LoreText: You could call it a more modern version of a balloon
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
-  scoreRequirement: 1000
+  moneyRequirement: 1500
+  scoreRequirement: 5000
   requiredUpgrades:
   - {fileID: 11400000, guid: 75ecd5bce2fffc444beffabcfe7b452b, type: 2}
   clickAmountMultiplier: 0
@@ -29,6 +29,6 @@ MonoBehaviour:
   upgrade: 1
   isDome: 0
   clickHoldEnabled: 0
-  passiveScoreIncrease: 32
+  passiveScoreIncrease: 2000
   starCaughtValueAddition: 0
   starCaughtFrequencyAddition: 0

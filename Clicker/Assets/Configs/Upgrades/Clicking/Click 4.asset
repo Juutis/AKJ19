@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: Clicking gives you more lift
   LoreText: A certain footnote gives Zarguuf an idea how to cast stronger spells
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
+  moneyRequirement: 100
   scoreRequirement: 600
   requiredUpgrades:
   - {fileID: 11400000, guid: c973cea6d57a08742bf888f81c11f33c, type: 2}

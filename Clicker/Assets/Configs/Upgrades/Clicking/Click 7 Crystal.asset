@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: A huge boost in clicking
   LoreText: When you get a hang of it growing crystals is pretty straight forward
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
+  moneyRequirement: 10000
   scoreRequirement: 7500
   requiredUpgrades:
   - {fileID: 11400000, guid: 4df10174e22a8ad49aac5a4c60321459, type: 2}

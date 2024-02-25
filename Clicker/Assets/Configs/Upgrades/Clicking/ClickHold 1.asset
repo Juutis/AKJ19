@@ -20,7 +20,7 @@ MonoBehaviour:
     life of toil. '
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
-  scoreRequirement: 0
+  scoreRequirement: 20
   requiredUpgrades: []
   clickAmountMultiplier: 0
   clickValueAddition: 0

@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: Summon a magical crystal that enchances the inherent magical properties
     of the island
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
+  moneyRequirement: 300
   scoreRequirement: 1500
   requiredUpgrades:
   - {fileID: 11400000, guid: 72a866bef4da8504ca8744e8990f9a4c, type: 2}
