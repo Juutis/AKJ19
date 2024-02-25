@@ -36,7 +36,7 @@ public class UIScoreText : MonoBehaviour
         }
     }
 
-    private void SetScore(System.Numerics.BigInteger newScore)
+    public void SetScore(System.Numerics.BigInteger newScore)
     {
         scoreText.text = $"{newScore:N0}";
         rtContainer.sizeDelta = new Vector2(

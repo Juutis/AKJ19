@@ -38,10 +38,10 @@ public class UIStarCounter : MonoBehaviour
     private void SetScore(System.Numerics.BigInteger newScore)
     {
         scoreText.text = $"{newScore:N0}";
-        rtContainer.sizeDelta = new Vector2(
+        /*rtContainer.sizeDelta = new Vector2(
             scoreText.text.Length * charSize + padding * 2,
             rtContainer.sizeDelta.y
-        );
+        );*/
     }
 
     public void UpdateScore(System.Numerics.BigInteger newScore)
