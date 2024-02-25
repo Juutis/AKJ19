@@ -29,6 +29,6 @@ MonoBehaviour:
   upgrade: 1
   isDome: 0
   clickHoldEnabled: 0
-  passiveScoreIncrease: 1000000000
+  passiveScoreIncrease: 100000000
   starCaughtValueAddition: 0
   starCaughtFrequencyAddition: 0

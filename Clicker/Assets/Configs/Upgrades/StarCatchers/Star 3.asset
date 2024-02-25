@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Star 3
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Additional star cather
+  UpgradeName: Additional star catcher
   Description: Star catcher allows you to catch stars and use them as money for other
     upgrades
   LoreText: Less is more... how can that be? It's impossible... more is more

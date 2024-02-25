@@ -78,6 +78,7 @@ public class UpgradeGraphics : MonoBehaviour
     }
 
     public void SetCatcherLevel(int level) {
+        Debug.Log("Catchers = " + level);
         activateGameObjects(catchers, level);
     }
 

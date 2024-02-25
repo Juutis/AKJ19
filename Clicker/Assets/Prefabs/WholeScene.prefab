@@ -329,53 +329,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8838783327238576708, guid: 4712d1282054a6140904e06650419f74,
-        type: 3}
-      propertyPath: allUpgrades.Array.size
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 8838783327238576708, guid: 4712d1282054a6140904e06650419f74,
-        type: 3}
-      propertyPath: 'allUpgrades.Array.data[33]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 51509492cb8068c4b812068f75427134,
-        type: 2}
-    - target: {fileID: 8838783327238576708, guid: 4712d1282054a6140904e06650419f74,
-        type: 3}
-      propertyPath: 'allUpgrades.Array.data[34]'
-      value: 
-      objectReference: {fileID: 11400000, guid: e3b0ab5f9954d7646946a9444f8d872d,
-        type: 2}
-    - target: {fileID: 8838783327238576708, guid: 4712d1282054a6140904e06650419f74,
-        type: 3}
-      propertyPath: 'allUpgrades.Array.data[35]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 48ae84d919e11054f8c6672eaad90977,
-        type: 2}
-    - target: {fileID: 8838783327238576708, guid: 4712d1282054a6140904e06650419f74,
-        type: 3}
-      propertyPath: 'allUpgrades.Array.data[36]'
-      value: 
-      objectReference: {fileID: 11400000, guid: dd4ea253f733e4b4cb09d90db4099abd,
-        type: 2}
-    - target: {fileID: 8838783327238576708, guid: 4712d1282054a6140904e06650419f74,
-        type: 3}
-      propertyPath: 'allUpgrades.Array.data[37]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 5de2560745a7fee4b985fe306dbd9465,
-        type: 2}
-    - target: {fileID: 8838783327238576708, guid: 4712d1282054a6140904e06650419f74,
-        type: 3}
-      propertyPath: 'allUpgrades.Array.data[38]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 8e0f7694c3731be45937ccc5364958bf,
-        type: 2}
-    - target: {fileID: 8838783327238576708, guid: 4712d1282054a6140904e06650419f74,
-        type: 3}
-      propertyPath: 'allUpgrades.Array.data[39]'
-      value: 
-      objectReference: {fileID: 11400000, guid: cc7d8f05fd3450e41830cd3653993060,
-        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
