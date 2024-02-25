@@ -221,7 +221,6 @@ public class GraphicsManager : MonoBehaviour
         }
 
         if (currentConfig.EnableObject != null) {
-            Debug.Log("Activating " + currentConfig.EnableObject.gameObject);
             currentConfig.EnableObject.gameObject.SetActive(true);
             currentConfig.EnableObject.SetPosition(t);
         }

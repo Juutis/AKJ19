@@ -111,8 +111,6 @@ public class ClickerManager : MonoBehaviour
             BuyUpgrade(data);
             return;
         }
-
-        //Debug.Log("Click registered");
     }
 
     private void BuyUpgrade(ClickData data)
@@ -169,10 +167,11 @@ public class ClickerManager : MonoBehaviour
         IEnumerable<UpgradeConfig> newUpgrades = allUpgrades
             .Where(x => !boughtUpgrades.Select(x => x.UpgradeName).Contains(x.UpgradeName))
             .Where(x => !upgradeButtons.Any(y => y.UpgradeConfig == x))
-            .Where(x => mainScore.CompareTo(x.scoreRequirement) >= 0)
+            // .Where(x => mainScore.CompareTo(x.scoreRequirement) >= 0)
             .Where(x => x.requiredUpgrades == null ||
                 x.requiredUpgrades.Select(y => y.UpgradeName).All(y => boughtUpgrades.Select(z => z.UpgradeName).Contains(y))
-            );
+            )
+            .OrderBy(x => x.scoreRequirement);
         foreach (UpgradeConfig config in newUpgrades)
         {
             UIClickerButton newButton = Instantiate(clickerButtonPrefab);
@@ -186,11 +185,11 @@ public class ClickerManager : MonoBehaviour
             {
                 continue;
             }
-            if (button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) >= 0)
+            if (button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) >= 0 && mainScore.CompareTo(button.UpgradeConfig.scoreRequirement) >= 0)
             {
                 button.Enable();
             }
-            else if (!button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) == -1)
+            else if (!button.IsDisabled && money.CompareTo(button.UpgradeConfig.moneyRequirement) == -1 && mainScore.CompareTo(button.UpgradeConfig.scoreRequirement) == -1)
             {
                 button.Disable();
             }
@@ -217,7 +216,6 @@ public class ClickerManager : MonoBehaviour
     {
         money.Increase(starValue);
         UIManager.main.UpdateMoney(money.value);
-        Debug.Log(money.value);
     }
 }
 
