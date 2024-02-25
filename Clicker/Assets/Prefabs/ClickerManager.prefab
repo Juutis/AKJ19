@@ -75,5 +75,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c85fa5d1dbc5cf64bb24fdd137e5c231, type: 2}
   - {fileID: 11400000, guid: eec3457720fe2804eaf5e11c026c1e1f, type: 2}
   - {fileID: 11400000, guid: fb405364aac83fc4caa12eb5cd17ac4d, type: 2}
+  - {fileID: 11400000, guid: bb1cca102730c7342ac9c11ef82c090d, type: 2}
+  - {fileID: 11400000, guid: e4dfc897a07d563459d055feb3d0eaea, type: 2}
+  - {fileID: 11400000, guid: 83ee66d6bf0ea0640b8461d8a01391ad, type: 2}
+  - {fileID: 11400000, guid: 75ecd5bce2fffc444beffabcfe7b452b, type: 2}
+  - {fileID: 11400000, guid: 60c2a7563c68dfc4f9199b09161ec4ed, type: 2}
+  - {fileID: 11400000, guid: 51509492cb8068c4b812068f75427134, type: 2}
+  - {fileID: 11400000, guid: e3b0ab5f9954d7646946a9444f8d872d, type: 2}
+  - {fileID: 11400000, guid: 48ae84d919e11054f8c6672eaad90977, type: 2}
+  - {fileID: 11400000, guid: dd4ea253f733e4b4cb09d90db4099abd, type: 2}
+  - {fileID: 11400000, guid: 5de2560745a7fee4b985fe306dbd9465, type: 2}
   clickerButtonPrefab: {fileID: 5127830512815742122, guid: 51a2c874590e19042a1292525567a9e7,
     type: 3}
