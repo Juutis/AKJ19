@@ -5,6 +5,8 @@ using System.Linq;
 using Cinemachine;
 using Mono.Cecil.Cil;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 
 public class GraphicsManager : MonoBehaviour
@@ -34,6 +36,9 @@ public class GraphicsManager : MonoBehaviour
     [SerializeField]
     private ParticleSystem asteroids;
 
+    [SerializeField]
+    private IslandLauncher island;
+
     private CinemachineBasicMultiChannelPerlin cameraNoise;
     private CinemachineDollyCart cameraDolly;
 
@@ -58,6 +63,16 @@ public class GraphicsManager : MonoBehaviour
 
     private Material waterMaterial;
 
+    [SerializeField]
+    private Volume volume;
+
+    private VolumeProfile profile;
+
+    private Bloom bloom;
+
+    [SerializeField]
+    private AudioSource music;
+
     void Awake() {
         Main = this;
     }
@@ -75,12 +90,17 @@ public class GraphicsManager : MonoBehaviour
         speedStripes.Stop();
         speedStars.Stop();
         stars.Stop();
+
+        profile = volume.profile;
+        if (!profile) throw new NullReferenceException(nameof(VolumeProfile));
+        if (!profile.TryGet(out bloom)) throw new NullReferenceException(nameof(bloom));
+        bloom.intensity.Override(0.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //testHeight = 500000000000 + Time.deltaTime * 1.0;
+        //testHeight = 50000000000000 + Time.deltaTime * 1.0;
         //SetHeight(testHeight);
 
         var heightT = Math.Clamp((Time.time - lerpStarted) / heightLerpDuration, 0.0f, 1.0f);
@@ -112,6 +132,10 @@ public class GraphicsManager : MonoBehaviour
         if (cameraOrbitSpeed > 10) cameraOrbitSpeed = 10;
         cameraDolly.m_Speed = (float)cameraOrbitSpeed;
 
+        if (cameraOrbitSpeed > 0 && !music.isPlaying) {
+            music.Play();
+        }
+
         if (targetHeight != nextTargetHeight) {
             targetHeight = nextTargetHeight;
             lerpStarted = Time.time;
@@ -141,6 +165,8 @@ public class GraphicsManager : MonoBehaviour
         if (i >= skyboxHeightThresholds.Count) {
             var config = skyboxHeightThresholds.Last();
             configureSkyBox(config.SkyColor, config.GroundColor, config.Thickness, config.Exposure, config.WaterAlpha);
+            island.Launch();
+            enableBloom();
             return;
         }
 
@@ -227,6 +253,10 @@ public class GraphicsManager : MonoBehaviour
         skyboxMaterial.SetFloat("_AtmosphereThickness", thickness);
         skyboxMaterial.SetFloat("_Exposure", exposure);
         waterMaterial.SetFloat("_Alpha", waterAlpha);
+    }
+    
+    private void enableBloom() {
+        bloom.intensity.Override(20.0f);
     }
 }
 
