@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: Zarguuf consults his trusted magical tomes to perfect his spells
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 20
-  scoreRequirement: 160
+  scoreRequirement: 100
   requiredUpgrades:
   - {fileID: 11400000, guid: c3a1e4e0aa390784db14ce4d8a53f969, type: 2}
   clickAmountMultiplier: 0
