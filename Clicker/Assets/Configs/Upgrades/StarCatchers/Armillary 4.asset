@@ -10,27 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: Cauldron 2
+  m_Name: Armillary 4
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Another Cauldron
-  Description: Cauldron's potion doubles its effect
-  LoreText: Cauldron seemed to be such a good idea that another is probably even
-    better!
-  Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
-  scoreRequirement: 300
+  UpgradeName: Water cooling
+  Description: Armillary's effect is doubled
+  LoreText: Armillary's speed is capped only by the risk of it melting down
+  Icon: {fileID: 0}
+  moneyRequirement: 
+  scoreRequirement: 30
   requiredUpgrades:
-  - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
-  - {fileID: 11400000, guid: a1141028e39fc654ab2f2ccf6237c678, type: 2}
+  - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
-  additionalClickersAdded: 1
+  additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
   upgrade: 0
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
-  starCaughtValueAddition: 0
+  starCaughtValueAddition: 21
   starCaughtFrequencyAddition: 0

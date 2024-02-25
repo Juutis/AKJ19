@@ -58,6 +58,11 @@ public class ClickerManager : MonoBehaviour
 
     private void Update()
     {
+        if (!hasDome && mainScore.CompareTo(noDomeMaxScore) >= 0)
+        {
+            mainScore.value = noDomeMaxScore.value;
+        }
+
         if (Time.time - lastClick >= (1f / clickFrequency) && additionalClickers > 0)
         {
             System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower, additionalClickers);
@@ -66,7 +71,7 @@ public class ClickerManager : MonoBehaviour
             UIManager.main.ShowPoppingText($"+{increment:N0}", prevClickPos);
         }
 
-        if (hasDome || mainScore.CompareTo(noDomeMaxScore) < 0)
+        if (passiveScoreIncrease.CompareTo(0) > 0)
         {
             BigNumber scorePerFrame = BigNumber.Multiply(passiveScoreIncrease, Time.deltaTime);
             mainScore.Increase(scorePerFrame);

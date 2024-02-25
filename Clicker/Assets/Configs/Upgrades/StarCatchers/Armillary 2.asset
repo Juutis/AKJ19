@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Armillary 2
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Star Catcher 2000
-  Description: "\t"
-  LoreText: 
+  UpgradeName: Oiled joints
+  Description: More efficient star refining
+  LoreText: Even magical brass joints need care
   Icon: {fileID: 0}
   moneyRequirement: 
   scoreRequirement: 30

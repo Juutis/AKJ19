@@ -15,6 +15,5 @@ MonoBehaviour:
   <InitialClickHoldFrequency>k__BackingField: 3
   <InitialClickAmount>k__BackingField: 1
   <InitialMoney>k__BackingField: 5
-  <NoDomeMaxScore>k__BackingField: 213123123
+  <NoDomeMaxScore>k__BackingField: 50000
   <StarValue>k__BackingField: 1
-  <StarFlyDuration>k__BackingField: 3
