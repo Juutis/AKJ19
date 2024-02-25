@@ -57,7 +57,7 @@ public class GraphicsManager : MonoBehaviour
         Main = this;
     }
 
-    private double testHeight = 250;
+    private double testHeight = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +75,7 @@ public class GraphicsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        testHeight = testHeight + Time.deltaTime * 0.0f;
+        testHeight = testHeight + Time.deltaTime * 3.0f;
         SetHeight(testHeight);
 
 
@@ -176,7 +176,9 @@ public class GraphicsManager : MonoBehaviour
         }
 
         if (currentConfig.EnableObject != null) {
-            currentConfig.EnableObject.SetActive(true);
+            Debug.Log("NOT NULL");
+            currentConfig.EnableObject.gameObject.SetActive(true);
+            currentConfig.EnableObject.SetPosition(t);
         }
 
         if (rumbleTime < Time.time) {
@@ -222,6 +224,6 @@ public struct SkyboxHeightThreshold {
     public bool SpawnSpeedStars;
     public bool ShowStars;
     public bool ShowAsteroids;
-    public GameObject EnableObject;
+    public Mover EnableObject;
     public float Rumble;
 }

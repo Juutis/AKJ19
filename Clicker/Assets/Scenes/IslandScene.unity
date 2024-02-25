@@ -119,6 +119,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &354280956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 467936554077150300, guid: 32d76811251a53046ac5f5815711d881,
+    type: 3}
+  m_PrefabInstance: {fileID: 1179082789191484987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496379766b4e6c64f99fbac384937f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1179082789191484987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,10 +139,75 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 467936554077150300, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: totalDistance
+      value: 6000
+      objectReference: {fileID: 0}
     - target: {fileID: 1128281288051349039, guid: 32d76811251a53046ac5f5815711d881,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172647486999466956, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: totalDistance
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201193720117517905, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: totalDistance
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327222235271067897, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1531
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836759843411448866, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841990555889736127, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2557225794351275838, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725984315446975972, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: totalDistance
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074572354411763021, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: totalDistance
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096518299943820540, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1664
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171273290127103895, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296039994059466890, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.16650684
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638260983257177321, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1983
       objectReference: {fileID: 0}
     - target: {fileID: 4058913987689863467, guid: 32d76811251a53046ac5f5815711d881,
         type: 3}
@@ -182,10 +259,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4770983842996637372, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1376
+      objectReference: {fileID: 0}
     - target: {fileID: 5354063370908823591, guid: 32d76811251a53046ac5f5815711d881,
         type: 3}
       propertyPath: m_Name
       value: GFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056661980102164780, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1708
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116167591796526257, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1593
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206167825151027737, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: totalDistance
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: skyboxHeightThresholds.Array.data[16].EnableObject
+      value: 
+      objectReference: {fileID: 354280956}
+    - target: {fileID: 6914917459029975146, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034381948726398724, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1903
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450237606829343855, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976591455666097692, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: totalDistance
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989546345653471149, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1396
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518050998209744393, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: totalDistance
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214424533363131514, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
