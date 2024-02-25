@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: The Armillary allows you to get more star value out of each star caught
   LoreText: Armillary's speed is capped only by the risk of it melting down
   Icon: {fileID: 0}
-  moneyRequirement: 12000
+  moneyRequirement: 500000
   scoreRequirement: 450000
   requiredUpgrades:
   - {fileID: 11400000, guid: 19844ae7b0102eb47a5d69c07514c61a, type: 2}

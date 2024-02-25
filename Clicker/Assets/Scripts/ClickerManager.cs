@@ -65,6 +65,9 @@ public class ClickerManager : MonoBehaviour
 
     private void Update()
     {
+        if (ended) {
+            return;
+        }
         if (!hasDome && mainScore.CompareTo(noDomeMaxScore) >= 0)
         {
             mainScore.value = noDomeMaxScore.value;

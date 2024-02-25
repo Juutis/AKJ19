@@ -41,7 +41,6 @@ public class UIManager : MonoBehaviour
     }
 
     public void End() {
-        Time.timeScale = 0f;
         theEndScreen.SetActive(true);
     }
 
@@ -54,7 +53,6 @@ public class UIManager : MonoBehaviour
                 canSpawnStar = true;
             }
         }
-
     }
 
     public void ShowHoverBox(string description, string flavor)
