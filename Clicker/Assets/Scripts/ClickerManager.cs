@@ -61,7 +61,7 @@ public class ClickerManager : MonoBehaviour
             System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower, additionalClickers);
             lastClick = Time.time;
             // UIManager.main.ShowPoppingText($"+{increment:N0}", position);
-            UIManager.main.UpdateScore(mainScore.value);
+            UpdateScore();
         }
 
         if (hasDome || mainScore.CompareTo(noDomeMaxScore) < 0)
@@ -83,13 +83,19 @@ public class ClickerManager : MonoBehaviour
         }
     }
 
+    private void UpdateScore()
+    {
+        UIManager.main.UpdateScore(mainScore.value);
+        GraphicsManager.Main.SetHeight((double)mainScore.value);
+    }
+
     public void RegisterClick(ClickerAction action, Vector3 position, ClickData data = null)
     {
         if (action == ClickerAction.NumberGoUp)
         {
             System.Numerics.BigInteger increment = mainScore.IncrementValue(clickPower);
             UIManager.main.ShowPoppingText($"+{increment:N0}", position);
-            UIManager.main.UpdateScore(mainScore.value);
+            UpdateScore();
         }
         if (action == ClickerAction.BuyUpgrade)
         {

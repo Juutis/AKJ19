@@ -114,7 +114,7 @@ MonoBehaviour:
   m_text: You can now hold down the clicker button instead of having to spam your
     mouse button! Hits the button 5 times per second.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f33af0191167b44596eaaba7ca2c410, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 480ce7cc15dceae4993295a6d6cb2359, type: 2}
   m_sharedMaterial: {fileID: -5750803103322067641, guid: 2f33af0191167b44596eaaba7ca2c410,
     type: 2}
   m_fontSharedMaterials: []
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3894752253758958352
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_text: ~ Legends tell of an artifact long lost that frees workers from their life
     of toil. ~
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e3f8c0b7db70ee04fa1e070d2ce6d0fa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4a9d1e95800a41d4699eb4a42923d90f, type: 2}
   m_sharedMaterial: {fileID: 3920115004495231089, guid: e3f8c0b7db70ee04fa1e070d2ce6d0fa,
     type: 2}
   m_fontSharedMaterials: []
@@ -578,6 +578,6 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
