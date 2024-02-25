@@ -75,6 +75,7 @@ public class ClickerManager : MonoBehaviour
         if (passiveScoreIncrease.CompareTo(0) > 0 && (Time.time - lastPassiveIncome > 1))
         {
             mainScore.Increase(passiveScoreIncrease);
+            lastPassiveIncome = Time.time;
         }
 
         upgradeCheckTimer += Time.deltaTime;
