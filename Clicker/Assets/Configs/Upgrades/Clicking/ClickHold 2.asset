@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: Holding the click produces lift faster
   LoreText: Refreshing cup of green tea helps with casting
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 5
+  moneyRequirement: 3
   scoreRequirement: 1250
   requiredUpgrades:
   - {fileID: 11400000, guid: 479e3b68a7d00404d9f1855ce71cf140, type: 2}

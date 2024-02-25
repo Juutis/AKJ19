@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: Double the catching rate
   LoreText: You must construct additional pyl... star catchers!
   Icon: {fileID: 0}
-  moneyRequirement: 
+  moneyRequirement: 300
   scoreRequirement: 35000
   requiredUpgrades:
   - {fileID: 11400000, guid: 47276561d144a7a4cb38c002acd0e783, type: 2}
@@ -31,4 +31,4 @@ MonoBehaviour:
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 0
-  starCaughtFrequencyAddition: 1
+  starCaughtFrequencyAddition: 1.1

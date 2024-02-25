@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: The current hypothesis is that more nets you have, the more stars you
     catch
   Icon: {fileID: 0}
-  moneyRequirement: 
+  moneyRequirement: 155
   scoreRequirement: 16500
   requiredUpgrades:
   - {fileID: 11400000, guid: 1e6a969d63a6954499c631e9d7476988, type: 2}
@@ -32,4 +32,4 @@ MonoBehaviour:
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 0
-  starCaughtFrequencyAddition: 1
+  starCaughtFrequencyAddition: 0.8

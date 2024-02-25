@@ -18,7 +18,7 @@ MonoBehaviour:
     upgrades
   LoreText: A magical net that catches stars
   Icon: {fileID: 0}
-  moneyRequirement: 
+  moneyRequirement: 0
   scoreRequirement: 50
   requiredUpgrades:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
@@ -32,4 +32,4 @@ MonoBehaviour:
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 1
-  starCaughtFrequencyAddition: 1
+  starCaughtFrequencyAddition: 0.2

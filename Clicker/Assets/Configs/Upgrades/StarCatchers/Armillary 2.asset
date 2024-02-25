@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: More efficient star refining
   LoreText: Even magical brass joints need care
   Icon: {fileID: 0}
-  moneyRequirement: 
+  moneyRequirement: 200
   scoreRequirement: 2600
   requiredUpgrades:
   - {fileID: 11400000, guid: 1e6a969d63a6954499c631e9d7476988, type: 2}

@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: Cauldron seemed to be such a good idea that another is probably even
     better!
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
+  moneyRequirement: 30
   scoreRequirement: 1000
   requiredUpgrades:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}

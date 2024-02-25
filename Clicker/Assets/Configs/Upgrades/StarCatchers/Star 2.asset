@@ -18,7 +18,7 @@ MonoBehaviour:
   LoreText: Recent changes in the star dust economy resulted in more nets to be available
     for purchase
   Icon: {fileID: 0}
-  moneyRequirement: 
+  moneyRequirement: 5
   scoreRequirement: 250
   requiredUpgrades:
   - {fileID: 11400000, guid: 38e57565dbeb7f548b684994f292daed, type: 2}
@@ -32,4 +32,4 @@ MonoBehaviour:
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 0
-  starCaughtFrequencyAddition: 1
+  starCaughtFrequencyAddition: 0.3
