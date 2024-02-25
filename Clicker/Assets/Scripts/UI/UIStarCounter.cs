@@ -8,7 +8,7 @@ public class UIStarCounter : MonoBehaviour
     [SerializeField]
     private RectTransform rtContainer;
     private float charSize = 40;
-    private float padding = 20;
+    private float padding = 30;
 
     private System.Numerics.BigInteger currentScore = 0;
     private System.Numerics.BigInteger targetScore;
