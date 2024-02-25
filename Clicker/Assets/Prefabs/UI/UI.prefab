@@ -1010,10 +1010,13 @@ MonoBehaviour:
   uiScoreText: {fileID: 2118658456369604213}
   uiMoneyText: {fileID: 6571140361848613639}
   uiHoverBox: {fileID: 6450924790053940011}
+  gameRenderBox: {fileID: 6391064968779667617}
   uiPoppingTextPrefab: {fileID: 7905565617510709586, guid: b786311247080804a92069b27b71fc54,
     type: 3}
   uiPoppingTextContainer: {fileID: 6657483813468897264}
   buttonContainer: {fileID: 8771109976902948299}
+  starColor: {r: 1, g: 0.9607844, b: 0, a: 1}
+  scoreColor: {r: 1, g: 0.4666667, b: 0, a: 1}
 --- !u!1 &5154975079584690231
 GameObject:
   m_ObjectHideFlags: 0

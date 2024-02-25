@@ -38,24 +38,15 @@ public class UIStarCounter : MonoBehaviour
     private void SetScore(long newScore)
     {
         scoreText.text = $"{newScore:N0}";
-        /*rtContainer.sizeDelta = new Vector2(
-            scoreText.text.Length * charSize + padding * 2,
-            rtContainer.sizeDelta.y
-        );*/
     }
 
     public void UpdateScore(long newScore)
     {
+        if (newScore > currentScore) {
+            UIManager.main.ShowPoppingStarText($"+ {newScore - currentScore}");
+        }
         targetScore = newScore;
         isLerping = true;
     }
-    /*
-    public void UpdateScore(string newScore)
-    {
-        scoreText.text = newScore;
-        rtContainer.sizeDelta = new Vector2(
-            scoreText.text.Length * charSize + padding * 2,
-            rtContainer.sizeDelta.y
-        );
-    }*/
+
 }
