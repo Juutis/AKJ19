@@ -59,7 +59,8 @@ public class ClickerManager : MonoBehaviour
 
     public void End() {
         if (ended) return;
-
+        ended = true;
+        UIManager.main.End();
     }
 
     private void Update()

@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private UIScoreText uiScoreText;
     [SerializeField]
+    private GameObject theEndScreen;
+    [SerializeField]
     private UIStarCounter uiMoneyText;
     [SerializeField]
     private UIHoverBox uiHoverBox;
@@ -38,6 +40,11 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void End() {
+        Time.timeScale = 0f;
+        theEndScreen.SetActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -47,6 +54,7 @@ public class UIManager : MonoBehaviour
                 canSpawnStar = true;
             }
         }
+
     }
 
     public void ShowHoverBox(string description, string flavor)
