@@ -37,7 +37,12 @@ public class GraphicsManager : MonoBehaviour
     private CinemachineBasicMultiChannelPerlin cameraNoise;
     private CinemachineDollyCart cameraDolly;
 
-    private double currentHeight = 0.0f;
+    private double currentHeight = 0.0;
+    private double targetHeight = 0.0;
+    private float lerpStarted = 0.0f;
+    private double lerpStartHeight = 0.0;
+    private float heightLerpDuration = 1.0f;
+
 
     private float rumbleTime = 0.0f;
     private float rumbleDuration = 0.5f;
@@ -58,6 +63,9 @@ public class GraphicsManager : MonoBehaviour
     }
 
     private double testHeight = 0;
+    private double speed = 0.0f;
+
+    private 
 
     // Start is called before the first frame update
     void Start()
@@ -75,9 +83,11 @@ public class GraphicsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        testHeight = testHeight + Time.deltaTime * 3.0f;
-        SetHeight(testHeight);
+        //testHeight = testHeight + Time.deltaTime * speed;
+        //SetHeight(testHeight);
 
+        var heightT = Math.Clamp((Time.time - lerpStarted) / heightLerpDuration, 0.0f, 1.0f);
+        currentHeight = lerpStartHeight + heightT * (targetHeight - lerpStartHeight);
 
         if (rumbleTime > Time.time) {
             var t = (rumbleTime - Time.time) / rumbleDuration;
@@ -106,10 +116,19 @@ public class GraphicsManager : MonoBehaviour
     }
 
     public void SetHeight(double height) {
+        if (height == targetHeight) {
+            return;
+        }
         if (height < 6) {
             Rumble();
         }
-        currentHeight = height;
+        lerpStarted = Time.time;
+        lerpStartHeight = currentHeight;
+        targetHeight = height;
+    }
+
+    public void SetSpeed(double speed) {
+        this.speed = speed;
     }
 
     public void Rumble() {
