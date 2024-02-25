@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Click 3
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Click +2
-  Description: Each click is now worth 2 more
+  UpgradeName: Click +3
+  Description: Each click is now worth 3 more
   LoreText: Zarguuf consults his trusted magical tomes to perfect his spells
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
-  scoreRequirement: 20
+  scoreRequirement: 160
   requiredUpgrades:
-  - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
+  - {fileID: 11400000, guid: c3a1e4e0aa390784db14ce4d8a53f969, type: 2}
   clickAmountMultiplier: 0
-  clickValueAddition: 2
+  clickValueAddition: 3
   additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0

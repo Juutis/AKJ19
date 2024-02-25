@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Cauldron 4
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Another Cauldron
+  UpgradeName: Another Cauldron lvl3
   Description: Cauldron's potion doubles its effect
   LoreText: Zarguuf really loves the smell of nose hair burning potion gas
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 0
-  scoreRequirement: 4800
+  scoreRequirement: 6800
   requiredUpgrades:
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
   - {fileID: 11400000, guid: dd5586702e3a8b74ebc7d0b9a7ee30f4, type: 2}

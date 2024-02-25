@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: Each click is now worth 1 more
   LoreText: Some clicks are worth more than others
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 5
+  moneyRequirement: 0
   scoreRequirement: 10
   requiredUpgrades: []
   clickAmountMultiplier: 0

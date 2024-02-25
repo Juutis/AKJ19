@@ -10,27 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
-  m_Name: Cauldron 6
+  m_Name: ClickHold 5
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Caustic Brew
-  Description: Massive clicking boost!
-  LoreText: Zarguuf threw in some unsavory reagent to make the potion to really pop
-    off
+  UpgradeName: A can of strong energy drink
+  Description: Holding the click produces lift faster
+  LoreText: Zarguufs jittery hands work magically
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
-  moneyRequirement: 0
-  scoreRequirement: 80000
+  moneyRequirement: 5
+  scoreRequirement: 1
   requiredUpgrades:
-  - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
-  - {fileID: 11400000, guid: 16bc7e49961879e4abb944cee84737ad, type: 2}
-  clickAmountMultiplier: 8
+  - {fileID: 11400000, guid: c85fa5d1dbc5cf64bb24fdd137e5c231, type: 2}
+  clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0
   additionalClickMultiplier: 0
-  clickHoldFrequency: 0
+  clickHoldFrequency: 1.5
   upgrade: 0
   isDome: 0
-  clickHoldEnabled: 0
+  clickHoldEnabled: 1
   passiveScoreIncrease: 
   starCaughtValueAddition: 0
   starCaughtFrequencyAddition: 0

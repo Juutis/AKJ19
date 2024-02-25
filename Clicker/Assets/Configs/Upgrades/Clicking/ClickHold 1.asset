@@ -20,14 +20,16 @@ MonoBehaviour:
     life of toil. '
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 5
-  scoreRequirement: 10
+  scoreRequirement: 220
   requiredUpgrades: []
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0
   additionalClickMultiplier: 0
-  clickHoldFrequency: 0
+  clickHoldFrequency: 0.5
   upgrade: 0
   isDome: 0
   clickHoldEnabled: 1
   passiveScoreIncrease: 
+  starCaughtValueAddition: 0
+  starCaughtFrequencyAddition: 0
