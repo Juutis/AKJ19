@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6836a70260b1ae408a73b753622b167, type: 3}
+  m_Name: Thruster 1
+  m_EditorClassIdentifier: 
+  UpgradeType: 0
+  UpgradeName: Thruster I
+  Description: Gives extra lift! +32 Lift/s
+  LoreText: You could call it a more modern version of a balloon
+  Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
+  moneyRequirement: 0
+  scoreRequirement: 1000
+  requiredUpgrades:
+  - {fileID: 11400000, guid: 60c2a7563c68dfc4f9199b09161ec4ed, type: 2}
+  clickAmountMultiplier: 0
+  clickValueAddition: 0
+  additionalClickersAdded: 0
+  additionalClickMultiplier: 0
+  clickHoldFrequency: 0
+  upgrade: 0
+  isDome: 0
+  clickHoldEnabled: 0
+  passiveScoreIncrease: 32
+  starCaughtValueAddition: 0
+  starCaughtFrequencyAddition: 0

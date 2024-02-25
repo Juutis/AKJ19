@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: + GRAVITONIUM
+  m_text: + LIFT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 003d856f9e4f5fa4ba4734ecf47fa538, type: 2}
   m_sharedMaterial: {fileID: -1831257177902415515, guid: 003d856f9e4f5fa4ba4734ecf47fa538,
