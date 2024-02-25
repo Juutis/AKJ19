@@ -93,6 +93,7 @@ public class ClickerManager : MonoBehaviour
 
     private void UpdateScore()
     {
+        SoundManager.main.PlaySound(GameSoundType.Click);
         UIManager.main.UpdateScore(mainScore.value);
         GraphicsManager.Main.SetHeight((double)mainScore.value);
     }
