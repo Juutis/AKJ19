@@ -255,11 +255,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3296039994059466890, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.16650684
-      objectReference: {fileID: 0}
     - target: {fileID: 4058913987689863467, guid: 32d76811251a53046ac5f5815711d881,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -314,86 +309,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[2].Threshold
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[3].Threshold
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[4].Threshold
-      value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[5].Threshold
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[6].Threshold
-      value: 15000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[7].Threshold
-      value: 50000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[8].Threshold
-      value: 150000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[9].Threshold
-      value: 500000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[10].Threshold
-      value: 1500000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[11].Threshold
-      value: 5000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[12].Threshold
-      value: 15000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[13].Threshold
-      value: 50000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[14].Threshold
-      value: 150000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[15].Threshold
-      value: 500000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[16].Threshold
-      value: 1.5e+9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770825821652392589, guid: 32d76811251a53046ac5f5815711d881,
-        type: 3}
-      propertyPath: skyboxHeightThresholds.Array.data[17].Threshold
-      value: 5e+9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

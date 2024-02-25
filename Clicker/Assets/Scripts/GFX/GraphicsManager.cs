@@ -41,7 +41,7 @@ public class GraphicsManager : MonoBehaviour
     private double targetHeight = 0.0;
     private float lerpStarted = 0.0f;
     private double lerpStartHeight = 0.0;
-    private float heightLerpDuration = 1.0f;
+    private float heightLerpDuration = 10.0f;
 
 
     private float rumbleTime = 0.0f;
@@ -62,10 +62,7 @@ public class GraphicsManager : MonoBehaviour
         Main = this;
     }
 
-    private double testHeight = 0;
-    private double speed = 0.0f;
-
-    private 
+    private double testHeight = 500000;
 
     // Start is called before the first frame update
     void Start()
@@ -83,11 +80,12 @@ public class GraphicsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //testHeight = testHeight + Time.deltaTime * speed;
+        //testHeight = 500000000000 + Time.deltaTime * 1.0;
         //SetHeight(testHeight);
 
         var heightT = Math.Clamp((Time.time - lerpStarted) / heightLerpDuration, 0.0f, 1.0f);
-        currentHeight = lerpStartHeight + heightT * (targetHeight - lerpStartHeight);
+        var heightDifference = targetHeight - lerpStartHeight;
+        currentHeight = lerpStartHeight + heightT * heightDifference;
 
         if (rumbleTime > Time.time) {
             var t = (rumbleTime - Time.time) / rumbleDuration;
@@ -113,22 +111,24 @@ public class GraphicsManager : MonoBehaviour
         if (cameraOrbitSpeed < 0) cameraOrbitSpeed = 0;
         if (cameraOrbitSpeed > 10) cameraOrbitSpeed = 10;
         cameraDolly.m_Speed = (float)cameraOrbitSpeed;
+
+        if (targetHeight != nextTargetHeight) {
+            targetHeight = nextTargetHeight;
+            lerpStarted = Time.time;
+            lerpStartHeight = currentHeight;
+        }
     }
 
+    private double nextTargetHeight;
+
     public void SetHeight(double height) {
-        if (height == targetHeight) {
+        if (height == nextTargetHeight) {
             return;
         }
         if (height < 6) {
             Rumble();
         }
-        lerpStarted = Time.time;
-        lerpStartHeight = currentHeight;
-        targetHeight = height;
-    }
-
-    public void SetSpeed(double speed) {
-        this.speed = speed;
+        nextTargetHeight = height;
     }
 
     public void Rumble() {
