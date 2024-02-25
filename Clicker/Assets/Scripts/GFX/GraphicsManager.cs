@@ -172,6 +172,12 @@ public class GraphicsManager : MonoBehaviour
         rumbleTime = Time.time + rumbleDuration;
     }
 
+    private bool ended = false;
+
+    public void End() {
+        ClickerManager.main.End();
+    }
+
     private void handleSky()
     {
         var i = nextSkyboxThreshold();
@@ -183,7 +189,10 @@ public class GraphicsManager : MonoBehaviour
             enableBloom();
             cameraNoise.m_AmplitudeGain = 0;
             cameraNoise.m_FrequencyGain = 0;
-            ClickerManager.main.End();
+            if (!ended) {
+                Invoke("End", 5.0f);
+                ended = true;
+            }
             return;
         }
 
