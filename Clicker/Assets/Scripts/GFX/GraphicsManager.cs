@@ -41,11 +41,11 @@ public class GraphicsManager : MonoBehaviour
     private double targetHeight = 0.0;
     private float lerpStarted = 0.0f;
     private double lerpStartHeight = 0.0;
-    private float heightLerpDuration = 10.0f;
+    private float heightLerpDuration = 1.0f;
 
 
     private float rumbleTime = 0.0f;
-    private float rumbleDuration = 0.5f;
+    private float rumbleDuration = 1.0f;
     private float rumbleIntensity = 3.0f;
 
     private float origWaterLevel;
@@ -91,7 +91,7 @@ public class GraphicsManager : MonoBehaviour
             var t = (rumbleTime - Time.time) / rumbleDuration;
             cameraNoise.m_AmplitudeGain = rumbleIntensity * t;
             cameraNoise.m_FrequencyGain = rumbleIntensity * t;
-            if (currentHeight < 4 && currentHeight > 1) {
+            if (currentHeight < 12) {
                 splash.Play();
             }
         } else {
@@ -125,7 +125,7 @@ public class GraphicsManager : MonoBehaviour
         if (height == nextTargetHeight) {
             return;
         }
-        if (height < 6) {
+        if (height < 12) {
             Rumble();
         }
         nextTargetHeight = height;
