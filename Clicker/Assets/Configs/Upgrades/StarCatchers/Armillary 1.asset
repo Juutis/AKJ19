@@ -27,7 +27,7 @@ MonoBehaviour:
   additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
-  upgrade: 7
+  upgrade: 6
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
