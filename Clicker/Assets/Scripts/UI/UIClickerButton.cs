@@ -189,7 +189,10 @@ public class UIClickerButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
             }
             else if (clickerAction == ClickerAction.BuyUpgrade)
             {
-                ClickerManager.main.RegisterClick(clickerAction, Input.mousePosition, new() { ResourceName = upgradeConfig.UpgradeName });
+                bool successfullyBought = ClickerManager.main.RegisterClick(clickerAction, Input.mousePosition, new() { ResourceName = upgradeConfig.UpgradeName });
+                if (!successfullyBought) {
+                    return;
+                }
                 Hide();
                 UIManager.main.HideHoverBox();
                 SoundManager.main.PlaySound(GameSoundType.Upgrade);

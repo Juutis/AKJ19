@@ -14,12 +14,13 @@ public class UIPoppingText : MonoBehaviour
     private float randomXFactor = 20f;
     private float randomYFactor = 5f;
 
-    public void Show(Vector3 position, string message)
+    public void Show(Vector3 position, string message, Color color)
     {
         float randomX = Random.Range(-randomXFactor, randomXFactor);
         float randomY = Random.Range(randomYFactor, randomYFactor * 2);
         transform.position = new Vector3(position.x + randomX, position.y + yOffset + randomY, position.z);
         txtMessage.text = message;
+        txtMessage.color = color;
         animator.SetTrigger("Show");
     }
 

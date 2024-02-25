@@ -98,7 +98,7 @@ public class ClickerManager : MonoBehaviour
         GraphicsManager.Main.SetHeight((double)mainScore.value);
     }
 
-    public void RegisterClick(ClickerAction action, Vector3 position, ClickData data = null)
+    public bool RegisterClick(ClickerAction action, Vector3 position, ClickData data = null)
     {
         if (action == ClickerAction.NumberGoUp)
         {
@@ -109,17 +109,17 @@ public class ClickerManager : MonoBehaviour
         }
         if (action == ClickerAction.BuyUpgrade)
         {
-            BuyUpgrade(data);
-            return;
+            return BuyUpgrade(data);
         }
+        return true;
     }
 
-    private void BuyUpgrade(ClickData data)
+    private bool BuyUpgrade(ClickData data)
     {
         if (data == null || string.IsNullOrWhiteSpace(data.ResourceName))
         {
             Debug.LogError("Trying to buy an upgrade without ClickData!");
-            return;
+            return false;
         }
 
         UpgradeConfig upgrade = allUpgrades.FirstOrDefault(x => x.UpgradeName == data.ResourceName);
@@ -127,13 +127,13 @@ public class ClickerManager : MonoBehaviour
         if (upgrade == null)
         {
             Debug.LogError("Trying to buy an upgrade that doesn't exist in ClickerManager allUpgrades!");
-            return;
+            return false;
         }
 
         if (money.CompareTo(upgrade.moneyRequirement) < 0)
         {
             Debug.LogWarning("Trying to buy an upgrade that is too expensive! Should be blocked by UI");
-            return;
+            return false;
         }
 
         money.Decrease(upgrade.moneyRequirement);
@@ -158,6 +158,7 @@ public class ClickerManager : MonoBehaviour
         starFrequency += upgrade.starCaughtFrequencyAddition;
 
         UpgradeGraphics.Main.SetUpgrades(boughtUpgrades);
+        return true;
     }
 
     public string GetScore()

@@ -19,6 +19,9 @@ public class UIManager : MonoBehaviour
     private UIHoverBox uiHoverBox;
 
     [SerializeField]
+    private RectTransform gameRenderBox;
+
+    [SerializeField]
     private UIPoppingText uiPoppingTextPrefab;
     [SerializeField]
     private Transform uiPoppingTextContainer;
@@ -68,10 +71,30 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private Color starColor;
+    [SerializeField]
+    private Color scoreColor;
+    private float starPadding = 5f;
+
+    public void ShowPoppingStarText(string message)
+    {
+        UIPoppingText uiPoppingText = Instantiate(uiPoppingTextPrefab, uiPoppingTextContainer);
+        
+        Vector3[] corners = new Vector3[4];
+        gameRenderBox.GetWorldCorners(corners);
+        Vector3 randomPos = new Vector2(
+            Random.Range(corners[0].x, corners[2].x),
+            Random.Range(corners[0].y, corners[1].y)
+        );
+
+        uiPoppingText.Show(randomPos, message, starColor);
+    }
+
     public void ShowPoppingText(string message, Vector3 position)
     {
         UIPoppingText uiPoppingText = Instantiate(uiPoppingTextPrefab, uiPoppingTextContainer);
-        uiPoppingText.Show(position, message);
+        uiPoppingText.Show(position, message, scoreColor);
     }
 
     public void UpdateMoney(long newMoney)
