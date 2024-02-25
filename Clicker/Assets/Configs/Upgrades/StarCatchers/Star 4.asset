@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Additional star cather
-  Description: Double the catching rate
+  Description: Star catcher allows you to catch stars and use them as money for other
+    upgrades
   LoreText: The current hypothesis is that more nets you have, the more stars you
     catch
   Icon: {fileID: 0}
-  moneyRequirement: 155
-  scoreRequirement: 16500
+  moneyRequirement: 400
+  scoreRequirement: 5000
   requiredUpgrades:
   - {fileID: 11400000, guid: 1e6a969d63a6954499c631e9d7476988, type: 2}
   clickAmountMultiplier: 0
@@ -32,4 +33,4 @@ MonoBehaviour:
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 0
-  starCaughtFrequencyAddition: 0.8
+  starCaughtFrequencyAddition: 15

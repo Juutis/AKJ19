@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Armillary 2
   m_EditorClassIdentifier: 
   UpgradeType: 0
-  UpgradeName: Oiled joints
-  Description: More efficient star refining
+  UpgradeName: 'Armillary: Oiled joints'
+  Description: The Armillary allows you to get more star value out of each star caught
   LoreText: Even magical brass joints need care
   Icon: {fileID: 0}
   moneyRequirement: 200
@@ -31,5 +31,5 @@ MonoBehaviour:
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
-  starCaughtValueAddition: 4
+  starCaughtValueAddition: 25
   starCaughtFrequencyAddition: 0

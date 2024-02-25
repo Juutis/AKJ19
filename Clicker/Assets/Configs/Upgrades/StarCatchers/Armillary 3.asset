@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Ceramic ball bearings
-  Description: Armillary's effect is doubled
+  Description: The Armillary allows you to get more star value out of each star caught
   LoreText: Armillary's speed is capped only by the risk of it melting down
   Icon: {fileID: 0}
   moneyRequirement: 3000
@@ -31,5 +31,5 @@ MonoBehaviour:
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
-  starCaughtValueAddition: 14
+  starCaughtValueAddition: 150
   starCaughtFrequencyAddition: 0

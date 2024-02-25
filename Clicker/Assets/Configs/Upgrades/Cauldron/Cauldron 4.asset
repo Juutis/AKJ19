@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Another Cauldron lvl3
-  Description: Cauldron's potion doubles its effect
+  Description: Bubbles in the cauldron propel you upwards (automatic clicker)
   LoreText: Zarguuf really loves the smell of nose hair burning potion gas
   Icon: {fileID: 21300000, guid: 84b9a05ea7925994494a47460bd8a32d, type: 3}
   moneyRequirement: 520
@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd5586702e3a8b74ebc7d0b9a7ee30f4, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
-  additionalClickersAdded: 4
+  additionalClickersAdded: 10
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
   upgrade: 5

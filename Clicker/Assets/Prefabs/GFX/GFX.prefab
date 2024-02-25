@@ -20116,7 +20116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3424167061922599831}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.065124616, y: 0.91629446, z: -0.16650686, w: -0.35838363}
+  m_LocalRotation: {x: -0.065124616, y: 0.91629446, z: -0.16650684, w: -0.3583836}
   m_LocalPosition: {x: 11.848179, y: 2.6835577, z: 12.829323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25514,6 +25514,19 @@ MonoBehaviour:
     ShowAsteroids: 0
     EnableObject: {fileID: 5408562152558009320}
     Rumble: 1
+  - Threshold: 45000
+    SkyColor: {r: 0, g: 0, b: 0, a: 1}
+    GroundColor: {r: 0, g: 0.6745098, b: 1, a: 1}
+    Thickness: 0
+    Exposure: 0
+    WaterAlpha: 0
+    SpawnClouds: 0
+    ShowSpeedStripes: 1
+    SpawnSpeedStars: 1
+    ShowStars: 1
+    ShowAsteroids: 0
+    EnableObject: {fileID: 0}
+    Rumble: 10
   - Threshold: 50000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0.6745098, b: 1, a: 1}
@@ -25526,7 +25539,7 @@ MonoBehaviour:
     ShowStars: 1
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
-    Rumble: 10
+    Rumble: 0
   - Threshold: 100000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0.6745098, b: 1, a: 1}
@@ -25539,7 +25552,7 @@ MonoBehaviour:
     ShowStars: 1
     ShowAsteroids: 0
     EnableObject: {fileID: 0}
-    Rumble: 10
+    Rumble: 0
   - Threshold: 150000
     SkyColor: {r: 0, g: 0, b: 0, a: 1}
     GroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -36017,7 +36030,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7360554540542760047}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.0000000018626449, y: 0.000000029802319, z: -0.0000000037252899,
+    w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

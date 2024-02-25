@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeType: 0
   UpgradeName: Additional star cather
-  Description: Double the catching rate
+  Description: Star catcher allows you to catch stars and use them as money for other
+    upgrades
   LoreText: Less is more... how can that be? It's impossible... more is more
   Icon: {fileID: 0}
-  moneyRequirement: 35
-  scoreRequirement: 2550
+  moneyRequirement: 50
+  scoreRequirement: 500
   requiredUpgrades:
   - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
   clickAmountMultiplier: 0
@@ -31,4 +32,4 @@ MonoBehaviour:
   clickHoldEnabled: 0
   passiveScoreIncrease: 
   starCaughtValueAddition: 0
-  starCaughtFrequencyAddition: 0.5
+  starCaughtFrequencyAddition: 3
