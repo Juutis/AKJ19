@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 99
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a466b9964c757f149897aeca6a2feef9, type: 2}
-  m_sharedMaterial: {fileID: -7305445417251642634, guid: a466b9964c757f149897aeca6a2feef9,
+  m_fontAsset: {fileID: 11400000, guid: 3e1d142a8103aff47aa8a5c8b630224b, type: 2}
+  m_sharedMaterial: {fileID: -7305445417251642634, guid: 3e1d142a8103aff47aa8a5c8b630224b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -279,8 +279,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: + GRAVITONIUM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7dab3247b2d158641bec197a84f45ee6, type: 2}
-  m_sharedMaterial: {fileID: -1831257177902415515, guid: 7dab3247b2d158641bec197a84f45ee6,
+  m_fontAsset: {fileID: 11400000, guid: 003d856f9e4f5fa4ba4734ecf47fa538, type: 2}
+  m_sharedMaterial: {fileID: -1831257177902415515, guid: 003d856f9e4f5fa4ba4734ecf47fa538,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

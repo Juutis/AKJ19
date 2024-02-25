@@ -340,6 +340,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: GFX
       objectReference: {fileID: 0}
+    - target: {fileID: 6240007144335310141, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6240007144335310141, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6240007144335310141, guid: 32d76811251a53046ac5f5815711d881,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -371,7 +386,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569459953}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &569459955
 Camera:
   m_ObjectHideFlags: 0
