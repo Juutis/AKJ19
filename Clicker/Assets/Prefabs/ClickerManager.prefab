@@ -46,12 +46,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConfig: {fileID: 11400000, guid: d6c086731b3bddf40b32ee8017b6a2ea, type: 2}
   allUpgrades:
-  - {fileID: 11400000, guid: 479e3b68a7d00404d9f1855ce71cf140, type: 2}
+  - {fileID: 11400000, guid: 7d564dcdae6e5ac489f990ddf1423590, type: 2}
+  - {fileID: 11400000, guid: fcb8abd602a6e3f41aff47828808f031, type: 2}
+  - {fileID: 11400000, guid: 54d17128cfeca0447bbfe822ecd42c43, type: 2}
+  - {fileID: 11400000, guid: 38e57565dbeb7f548b684994f292daed, type: 2}
+  - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
+  - {fileID: 11400000, guid: 1e6a969d63a6954499c631e9d7476988, type: 2}
+  - {fileID: 11400000, guid: 47276561d144a7a4cb38c002acd0e783, type: 2}
+  - {fileID: 11400000, guid: ca8c14ce10e978845b2325c3a946317b, type: 2}
+  - {fileID: 11400000, guid: e046ee366b97d8440bc27863e03fdac3, type: 2}
+  - {fileID: 11400000, guid: 19844ae7b0102eb47a5d69c07514c61a, type: 2}
   - {fileID: 11400000, guid: 1f423a7e0adb358448f031e7ca626fb8, type: 2}
   - {fileID: 11400000, guid: c3a1e4e0aa390784db14ce4d8a53f969, type: 2}
+  - {fileID: 11400000, guid: c973cea6d57a08742bf888f81c11f33c, type: 2}
+  - {fileID: 11400000, guid: 72a866bef4da8504ca8744e8990f9a4c, type: 2}
+  - {fileID: 11400000, guid: c77caf28f28736c458577fb47d50dc57, type: 2}
+  - {fileID: 11400000, guid: 4df10174e22a8ad49aac5a4c60321459, type: 2}
+  - {fileID: 11400000, guid: 37e3d5df8cecf9a41a0e9c2319a7b1eb, type: 2}
+  - {fileID: 11400000, guid: 479e3b68a7d00404d9f1855ce71cf140, type: 2}
   - {fileID: 11400000, guid: a1141028e39fc654ab2f2ccf6237c678, type: 2}
-  - {fileID: 11400000, guid: 90c466684977e484392539064d20fa9b, type: 2}
-  - {fileID: 11400000, guid: 7d564dcdae6e5ac489f990ddf1423590, type: 2}
-  - {fileID: 11400000, guid: 38e57565dbeb7f548b684994f292daed, type: 2}
+  - {fileID: 11400000, guid: acbe047a8e89878499767c346b478d1b, type: 2}
+  - {fileID: 11400000, guid: dd5586702e3a8b74ebc7d0b9a7ee30f4, type: 2}
+  - {fileID: 11400000, guid: 2a88481b42d2461449113732082bacba, type: 2}
+  - {fileID: 11400000, guid: 16bc7e49961879e4abb944cee84737ad, type: 2}
+  - {fileID: 11400000, guid: 06aa94e992717184183b1a2399b95c8d, type: 2}
   clickerButtonPrefab: {fileID: 5127830512815742122, guid: 51a2c874590e19042a1292525567a9e7,
     type: 3}
