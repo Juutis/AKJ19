@@ -20,8 +20,7 @@ MonoBehaviour:
   Icon: {fileID: 0}
   moneyRequirement: 150
   scoreRequirement: 25000
-  requiredUpgrades:
-  - {fileID: 11400000, guid: c3a1e4e0aa390784db14ce4d8a53f969, type: 2}
+  requiredUpgrades: []
   clickAmountMultiplier: 0
   clickValueAddition: 0
   additionalClickersAdded: 0

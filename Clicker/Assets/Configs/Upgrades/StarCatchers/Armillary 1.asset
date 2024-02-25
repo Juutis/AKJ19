@@ -32,5 +32,5 @@ MonoBehaviour:
   isDome: 0
   clickHoldEnabled: 0
   passiveScoreIncrease: 
-  starCaughtValueAddition: 2
+  starCaughtValueAddition: 3
   starCaughtFrequencyAddition: 0

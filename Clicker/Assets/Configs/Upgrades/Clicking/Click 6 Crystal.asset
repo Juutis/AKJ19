@@ -22,7 +22,7 @@ MonoBehaviour:
   requiredUpgrades:
   - {fileID: 11400000, guid: c77caf28f28736c458577fb47d50dc57, type: 2}
   clickAmountMultiplier: 0
-  clickValueAddition: 20
+  clickValueAddition: 1000
   additionalClickersAdded: 0
   additionalClickMultiplier: 0
   clickHoldFrequency: 0

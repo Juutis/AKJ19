@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: acbe047a8e89878499767c346b478d1b, type: 2}
   clickAmountMultiplier: 0
   clickValueAddition: 0
-  additionalClickersAdded: 2
+  additionalClickersAdded: 5
   additionalClickMultiplier: 0
   clickHoldFrequency: 0
   upgrade: 5
